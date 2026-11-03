@@ -1,0 +1,17 @@
+// Configuración para publicar la web en Cloudflare (Workers).
+// Cloudflare lee este archivo automáticamente al desplegar.
+{
+  // Nombre del proyecto en Cloudflare. Tiene que ser EXACTAMENTE el mismo
+  // nombre que pongas al crear el proyecto en el panel de Cloudflare.
+  "name": "profesional-web",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    // La web está en esta misma carpeta
+    "directory": ".",
+    // Sirve cada página tal cual (servicios.html, contacto.html...)
+    // sin redirecciones extra: cada clic carga más rápido.
+    "html_handling": "none",
+    // Si alguien entra en una dirección que no existe, ve 404.html
+    "not_found_handling": "404-page"
+  }
+}

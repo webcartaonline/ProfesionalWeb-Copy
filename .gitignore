@@ -1,0 +1,13 @@
+# Carpetas temporales que no hace falta guardar en GitHub
+.wrangler/
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Copia de seguridad local (no se sube a GitHub)
+*.zip
+
+# IA
+AGENTS.md
+MEMORY.md

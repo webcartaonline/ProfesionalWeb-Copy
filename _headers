@@ -1,0 +1,29 @@
+# Cabeceras de Cloudflare: seguridad y caché
+# (la caché hace que, al volver a la web o cambiar de página, no se descargue todo otra vez)
+
+# Seguridad básica para todas las páginas
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
+
+# Fuentes: no cambian nunca, se guardan 1 año
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imágenes: se guardan 7 días
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/favicon.ico
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+# Diseño (CSS) y JavaScript: se guardan 1 día.
+# Si cambias styles.css o main.js y quieres que se vea al momento,
+# sube el número de "?v=" en las páginas (ver LEEME.md).
+/css/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/js/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

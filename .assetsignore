@@ -1,0 +1,15 @@
+# Archivos que NO se publican en la web (son solo para ti o para Cloudflare)
+.git
+.github
+.vscode
+.wrangler
+node_modules
+.assetsignore
+.gitignore
+wrangler.jsonc
+LEEME.md
+README.md
+*.md
+
+# Copia de seguridad local (no se publica)
+*.zip

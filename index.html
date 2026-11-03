@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profesional Web · Diseño y desarrollo web</title>
+<meta name="description" content="Diseñamos y programamos webs rápidas, elegantes y hechas a medida.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>/* La animación de entrada solo sale la primera vez por visita */try{if(sessionStorage.getItem("pw-intro"))document.documentElement.className+=" no-intro";else sessionStorage.setItem("pw-intro","1")}catch(e){}</script>
+<link rel="stylesheet" href="css/styles.css?v=1">
+<script src="js/main.js?v=1" defer></script>
+</head>
+<body>
+<div class="pw" style="--intro: 1.05s">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-lens" aria-hidden="true"></div>
+<svg class="pw-filters" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pw-lens-48" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-8" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="0.9" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter><filter id="pw-lens-88" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-14" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="1.2" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter></svg>
+
+<div class="intro" aria-hidden="true">
+<div class="intro-mark">
+<img src="assets/img/icon-pw.png" alt="" width="76" height="76">
+<div class="intro-bar"><i></i></div>
+</div>
+</div>
+
+
+<div class="nav">
+<div class="nav-in">
+<a class="nav-logo" href="index.html"><svg viewBox="2800 1075 910 325" width="101" height="36" role="img" aria-label="Profesional Web"><g fill="currentColor"><text class="lw-b" x="2808.28" y="1216" font-family="Google Sans, sans-serif" font-weight="700" font-size="165">Profesional</text><text class="lw-r" x="3355.52" y="1382" font-family="Google Sans, sans-serif" font-weight="400" font-size="165">Web</text><path d="M2822 1346.5C2822 1323.58 2840.58 1305 2863.5 1305L3268.5 1305C3291.42 1305 3310 1323.58 3310 1346.5C3310 1369.42 3291.42 1388 3268.5 1388L2863.5 1388C2840.58 1388 2822 1369.42 2822 1346.5Z"></path></g></svg></a>
+<nav aria-label="Principal">
+<ul class="nav-links">
+<li><a href="index.html" aria-current="page">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="proyectos.html">Proyectos</a></li>
+<li><a href="estudio.html">Estudio</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+<a class="btn btn-dark btn-sm nav-cta" href="contacto.html">Escríbenos</a>
+<button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span></button>
+</div>
+<nav class="nav-panel" id="menu-movil" aria-label="Menú" hidden>
+<a href="index.html" aria-current="page">Inicio</a>
+<a href="servicios.html">Servicios</a>
+<a href="proyectos.html">Proyectos</a>
+<a href="estudio.html">Estudio</a>
+<a href="contacto.html">Contacto</a>
+<a class="btn btn-primary" href="contacto.html">Escríbenos</a>
+</nav>
+
+</div>
+
+<main id="contenido">
+
+<header class="hero">
+<div class="orbs" aria-hidden="true">
+<div class="orb" style="--x: 4%; --y: 6%; --sz: 540px; --z: -90; --c: var(--blue); --t: 16s"><i></i></div>
+<div class="orb" style="--x: 56%; --y: 22%; --sz: 480px; --z: 130; --c: var(--green); --t: 19s"><i></i></div>
+<div class="orb" style="--x: 28%; --y: 50%; --sz: 400px; --z: -150; --c: var(--orange); --t: 13s"><i></i></div>
+</div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="grid-glow" aria-hidden="true"></div>
+<div aria-hidden="true">
+<span class="chip" style="top: 23%; left: 7%; --z: 50; --i: 0; --c: var(--blue)">&lt;nav&gt;</span>
+<span class="chip" style="top: 19%; right: 8%; --z: -70; --i: 1; --c: var(--green)">display: grid;</span>
+<span class="chip" style="top: 55%; left: 4%; --z: 90; --i: 2; --c: var(--orange)">fetch("/api")</span>
+<span class="chip" style="top: 60%; right: 5%; --z: -45; --i: 3; --c: var(--blue)">@keyframes</span>
+<span class="chip" style="bottom: 15%; left: 15%; --z: 65; --i: 4; --c: var(--green)">git push</span>
+<span class="chip" style="bottom: 13%; right: 17%; --z: -95; --i: 5; --c: var(--orange)">:has()</span>
+</div>
+<div class="wrap hero-in">
+<p class="eyebrow fade-in" style="--i: 0">Diseño y desarrollo web</p>
+<h1 class="display"><span class="w" style="--i: 1">Webs</span> <span class="w" style="--i: 2">que</span> <span class="w" style="--i: 3">se</span> <span class="w" style="--i: 4">sienten</span> <span class="w w-accent" style="--i: 5">vivas.</span></h1>
+<p class="lead fade-in" style="--i: 7">Diseñamos y programamos webs rápidas, elegantes y hechas a medida. Tú nos cuentas tu idea; nosotros la convertimos en una experiencia que tus clientes recuerdan.</p>
+<div class="actions fade-in" style="--i: 9">
+<a class="btn btn-primary btn-lg" href="contacto.html">Empezar mi proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ghost btn-lg" href="proyectos.html">Ver proyectos</a>
+</div>
+</div>
+<div class="scroll-cue" aria-hidden="true"><span>Desliza</span><i></i></div>
+</header>
+
+<section class="sec" aria-labelledby="t-serv">
+<div class="wrap">
+<div class="sec-head" data-fx="in">
+<div class="sec-head-txt rv">
+<p class="eyebrow">Qué hacemos</p>
+<h2 class="h2" id="t-serv">Todo lo que tu negocio necesita para brillar en internet.</h2>
+</div>
+<a class="link-arrow rv" style="--d: 1" href="servicios.html">Ver todos los servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="cards3" data-fx="in">
+<div class="rv" style="--d: 0">
+<a class="tcard" href="servicios.html" style="--acc: var(--blue)" data-tilt>
+<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M3 9h18M8 21h8M12 17v4"></path></svg></span>
+<h3 class="h3">Diseño web</h3>
+<p>Webs únicas, pensadas para tu marca y perfectas en móvil, tablet y ordenador.</p>
+<span class="more">Saber más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+<div class="rv" style="--d: 1">
+<a class="tcard" href="servicios.html" style="--acc: var(--green)" data-tilt>
+<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"></path></svg></span>
+<h3 class="h3">Desarrollo a medida</h3>
+<p>Reservas, formularios, paneles de gestión… Programamos las funciones que tu negocio necesita.</p>
+<span class="more">Saber más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+<div class="rv" style="--d: 2">
+<a class="tcard" href="servicios.html" style="--acc: var(--orange)" data-tilt>
+<span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3M21 14v.01M14 21h7v-4"></path></svg></span>
+<h3 class="h3">Cartas digitales QR</h3>
+<p>Tu carta en el móvil de tus clientes con solo escanear un código. Cambia los precios al momento.</p>
+<span class="more">Saber más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="evo-sec" aria-labelledby="t-evo">
+<div class="evo-track" data-fx="track">
+<div class="evo-stage">
+<div class="wrap evo-grid">
+<div class="evo-copy">
+<p class="eyebrow">Cómo nace una web</p>
+<h2 class="h2" id="t-evo">Del código a la experiencia.</h2>
+<p class="lead">Cada web empieza con unas líneas de código y termina siendo algo que tus clientes disfrutan. Desliza y míralo.</p>
+<ol class="evo-steps">
+<li class="st st-1"><span class="st-n">01</span><span><strong>Código</strong><span>Escribimos cada línea a mano: limpia, ligera y rápida.</span></span></li>
+<li class="st st-2"><span class="st-n">02</span><span><strong>Estructura</strong><span>Ordenamos el contenido para que todo se entienda a la primera.</span></span></li>
+<li class="st st-3"><span class="st-n">03</span><span><strong>Experiencia</strong><span>Color, movimiento y detalle: lo que hace que tu web se recuerde.</span></span></li>
+</ol>
+<div class="evo-bar" aria-hidden="true"><i></i></div>
+</div>
+<div class="evo-win" aria-hidden="true">
+<div class="win-top"><i></i><i></i><i></i><span class="win-url">tunegocio.es</span></div>
+<div class="win-body">
+<div class="ly ly-code">
+<div class="cl" style="--l: 0"><span class="t-k">&lt;header</span> <span class="t-a">class</span>=<span class="t-s">"hero"</span><span class="t-k">&gt;</span></div>
+<div class="cl" style="--l: 1"><span class="ind"></span><span class="t-k">&lt;h1&gt;</span>Fuego lento, sabor de verdad<span class="t-k">&lt;/h1&gt;</span></div>
+<div class="cl" style="--l: 2"><span class="ind"></span><span class="t-k">&lt;a</span> <span class="t-a">href</span>=<span class="t-s">"#reservas"</span><span class="t-k">&gt;</span>Reservar mesa<span class="t-k">&lt;/a&gt;</span></div>
+<div class="cl" style="--l: 3"><span class="t-k">&lt;/header&gt;</span></div>
+<div class="cl" style="--l: 4"></div>
+<div class="cl" style="--l: 5"><span class="t-a">.hero</span> { display: grid; gap: 2rem; }</div>
+<div class="cl" style="--l: 6"><span class="t-a">.hero a</span> { border-radius: 999px; }</div>
+<div class="cl" style="--l: 7"></div>
+<div class="cl" style="--l: 8"><span class="t-a">const</span> io = <span class="t-a">new</span> IntersectionObserver(mostrar);</div>
+</div>
+<div class="ly ly-wire">
+<div class="w-row" style="height: 34px"><div class="wb" style="--b: 0; width: 24%">logo</div><div class="wb" style="--b: 1; width: 40%; margin-left: auto">menú</div></div>
+<div class="w-row" style="flex: 1"><div class="wb" style="--b: 2; flex: 1.1">título y botón</div><div class="wb" style="--b: 3; flex: 1">imagen</div></div>
+<div class="w-row" style="height: 96px"><div class="wb" style="--b: 4; flex: 1">tarjeta</div><div class="wb" style="--b: 5; flex: 1">tarjeta</div><div class="wb" style="--b: 6; flex: 1">tarjeta</div></div>
+</div>
+<div class="ly ly-site">
+<div class="sx sx-nav" style="--k: 0"><b>Casa Lumbre</b><span>Carta</span><span>Reservas</span><span>Contacto</span><em>Reservar</em></div>
+<div class="sx-hero">
+<div class="sx-txt">
+<span class="sx sx-eb" style="--k: 1">Cocina de brasa</span>
+<span class="sx sx-h" style="--k: 2">Fuego lento, sabor de verdad.</span>
+<span class="sx sx-p" style="--k: 3">Producto de temporada cocinado a la brasa, sin prisas.</span>
+<span class="sx sx-btn" style="--k: 4">Reservar mesa</span>
+</div>
+<div class="sx sx-img" style="--k: 3"><i></i><i></i><i></i></div>
+</div>
+<div class="sx-cards">
+<div class="sx sx-card" style="--k: 5"><i style="background: var(--orange)"></i>La carta</div>
+<div class="sx sx-card" style="--k: 6"><i style="background: var(--green)"></i>Reservas</div>
+<div class="sx sx-card" style="--k: 7"><i style="background: var(--blue)"></i>Cómo llegar</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="stmt" aria-label="Nuestra idea">
+<div class="wrap">
+<p class="stmt-text" data-fx="fill" style="--n: 21"><span style="--w: 0">Tu</span> <span style="--w: 1">web</span> <span style="--w: 2">es</span> <span style="--w: 3">tu</span> <span class="hl" style="--w: 4">mejor</span> <span class="hl" style="--w: 5">comercial:</span> <span style="--w: 6">trabaja</span> <span style="--w: 7">las</span> <span style="--w: 8">24</span> <span style="--w: 9">horas,</span> <span style="--w: 10">nunca</span> <span style="--w: 11">se</span> <span style="--w: 12">cansa</span> <span style="--w: 13">y</span> <span style="--w: 14">está</span> <span style="--w: 15">en</span> <span style="--w: 16">el</span> <span style="--w: 17">bolsillo</span> <span style="--w: 18">de</span> <span style="--w: 19">cada</span> <span style="--w: 20">cliente.</span></p>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="t-pj" style="overflow: clip">
+<div class="wrap">
+<div class="sec-head" data-fx="in">
+<div class="sec-head-txt rv">
+<p class="eyebrow">Proyectos</p>
+<h2 class="h2" id="t-pj">Webs que hablan por sí solas.</h2>
+</div>
+<a class="link-arrow rv" style="--d: 1" href="proyectos.html">Ver todos los proyectos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div class="strip" data-fx="par">
+<div class="strip-row" style="--dir: 1">
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v1" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Restaurante</span><span>Web con reservas</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v2" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Tienda online</span><span>Catálogo y pagos</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v3" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Carta digital QR</span><span>Menú en el móvil</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v4" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Portfolio</span><span>Galería animada</span></div>
+</a>
+
+</div>
+<div class="strip-row" style="--dir: -1">
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v5" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Clínica</span><span>Cita previa online</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v6" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Bar de copas</span><span>Carta en dos idiomas</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v1" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Panadería</span><span>Pedidos para recoger</span></div>
+</a>
+
+<a class="mock-card" href="proyectos.html">
+<div class="mock v2" aria-hidden="true">
+<div class="mock-bar"><i></i><i></i><i></i></div>
+<div class="mock-screen"><div class="mock-in">
+<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
+<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
+<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="m-band"></div>
+<div class="m-grid"><i></i><i></i><i></i></div>
+</div></div>
+</div>
+<div class="mock-cap"><span>Estudio de yoga</span><span>Horarios y reservas</span></div>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="sec bg-soft" aria-labelledby="t-proc">
+<div class="wrap">
+<div class="sec-head" data-fx="in">
+<div class="sec-head-txt rv">
+<p class="eyebrow">Proceso</p>
+<h2 class="h2" id="t-proc">De tu idea a tu web en 5 pasos.</h2>
+<p class="lead">Sin complicaciones ni tecnicismos. Nosotros hacemos el trabajo; tú solo lo apruebas.</p>
+</div>
+<a class="link-arrow rv" style="--d: 1" href="servicios.html">Ver el proceso completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<ol class="steps5" data-fx="fill" style="--n: 5">
+<li class="s5" style="--w: 0; --acc: var(--blue)"><span class="dot">1</span><h3>Hablamos</h3><p>Nos cuentas tu idea y lo que necesita tu negocio.</p></li>
+<li class="s5" style="--w: 1; --acc: var(--green)"><span class="dot">2</span><h3>Diseñamos</h3><p>Ves cómo quedará tu web antes de programarla.</p></li>
+<li class="s5" style="--w: 2; --acc: var(--orange)"><span class="dot">3</span><h3>Programamos</h3><p>La convertimos en una web real, rápida y segura.</p></li>
+<li class="s5" style="--w: 3; --acc: var(--blue)"><span class="dot">4</span><h3>Revisas</h3><p>Pides cambios hasta que todo esté a tu gusto.</p></li>
+<li class="s5" style="--w: 4; --acc: var(--green)"><span class="dot">5</span><h3>Publicamos</h3><p>Tu web sale a internet y seguimos a tu lado.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="sec" aria-labelledby="t-cta">
+<div class="wrap">
+<div class="cta" data-fx="in" data-glow>
+<div class="cta-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+<p class="eyebrow rv">¿Tienes un proyecto en mente?</p>
+<h2 class="cta-title rv" style="--d: 1" id="t-cta">¿Empezamos?</h2>
+<p class="lead rv" style="--d: 2">Cuéntanos tu idea. Te respondemos con una propuesta clara, sin compromiso y sin tecnicismos.</p>
+<div class="rv" style="--d: 3">
+<div class="magnet" data-magnet>
+<a class="btn btn-primary btn-lg" href="contacto.html">Escríbenos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="foot">
+<div class="wrap foot-in">
+<div class="foot-brand">
+<strong>Profesional Web</strong>
+<p class="body-sm">Diseño y desarrollo web a medida. Webs rápidas, elegantes y fáciles de usar.</p>
+</div>
+<div>
+<p class="foot-h">Páginas</p>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="proyectos.html">Proyectos</a></li>
+<li><a href="estudio.html">Estudio</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+<div>
+<p class="foot-h">Servicios</p>
+<ul>
+<li><a href="servicios.html">Diseño web</a></li>
+<li><a href="servicios.html">Desarrollo a medida</a></li>
+<li><a href="servicios.html">Mantenimiento</a></li>
+</ul>
+</div>
+<div>
+<p class="foot-h">Contacto</p>
+<ul>
+<li><a href="contacto.html">[tu@email.com]</a></li>
+<li><span>[Tu teléfono]</span></li>
+<li><span>[Tu ciudad]</span></li>
+</ul>
+</div>
+</div>
+<div class="wrap foot-bottom"><span>© 2026 Profesional Web</span><nav class="foot-legal" aria-label="Textos legales"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a></nav><span>Hecho a mano, línea a línea.</span></div>
+<p class="foot-giant" data-fx="end" aria-hidden="true"><span>Profesional Web</span></p>
+</footer>
+</div>
+</body>
+</html>
