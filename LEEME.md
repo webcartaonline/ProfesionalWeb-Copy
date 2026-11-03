@@ -110,7 +110,7 @@ Las imágenes se guardan 7 días en el navegador de quien visita. Para que una i
 - **Animaciones más ligeras:** las manchas de color ya no usan desenfoque (que es lo que más cuesta al procesador); se ven igual pero el móvil trabaja mucho menos. Las animaciones que no están en pantalla se pausan solas.
 - **En móviles y tablets** se quitan los desenfoques que se recalculan al hacer scroll y el efecto cristal sobre fondos animados. El diseño es el mismo y el scroll va fluido incluso en móviles sencillos.
 - **JavaScript más eficiente:** el scroll y el ratón se calculan como mucho una vez por fotograma, y solo se toca lo que cambia.
-- **Menos peso:** la fuente principal pasa de 87 KB a 28 KB, los iconos se han comprimido sin perder calidad y tu foto se sirve en AVIF/WebP (de 87 KB a 13–34 KB según la pantalla). Se carga solo cuando llegas a ella.
+- **Menos peso:** la fuente principal pasa de 87 KB a 28 KB, los iconos se han comprimido sin perder calidad y tu foto se sirve en AVIF/WebP (de 87 KB a unos 20–40 KB según la pantalla). Se carga solo cuando llegas a ella.
 - **Compatibilidad:** se han añadido alternativas para navegadores antiguos (Safari de iPhones viejos, Firefox antiguo…), para que nada se descoloque.
 - **Cloudflare:** caché en el navegador, sin redirecciones al cambiar de página, página 404 propia y cabeceras de seguridad.
 
