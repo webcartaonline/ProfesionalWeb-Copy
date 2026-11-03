@@ -11,8 +11,11 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>/* La animación de entrada solo sale la primera vez por visita */try{if(sessionStorage.getItem("pw-intro"))document.documentElement.className+=" no-intro";else sessionStorage.setItem("pw-intro","1")}catch(e){}</script>
-<link rel="stylesheet" href="css/styles.css?v=1">
-<script src="js/main.js?v=1" defer></script>
+<script src="js/componentes.js?v=1"></script>
+<link rel="stylesheet" href="css/general.css?v=1">
+<link rel="stylesheet" href="css/inicio.css?v=1">
+<script src="js/general.js?v=1" defer></script>
+<script src="js/inicio.js?v=1" defer></script>
 </head>
 <body>
 <div class="pw" style="--intro: 1.05s">
@@ -30,31 +33,7 @@
 </div>
 
 
-<div class="nav">
-<div class="nav-in">
-<a class="nav-logo" href="index.html"><svg viewBox="2800 1075 910 325" width="101" height="36" role="img" aria-label="Profesional Web"><g fill="currentColor"><text class="lw-b" x="2808.28" y="1216" font-family="Google Sans, sans-serif" font-weight="700" font-size="165">Profesional</text><text class="lw-r" x="3355.52" y="1382" font-family="Google Sans, sans-serif" font-weight="400" font-size="165">Web</text><path d="M2822 1346.5C2822 1323.58 2840.58 1305 2863.5 1305L3268.5 1305C3291.42 1305 3310 1323.58 3310 1346.5C3310 1369.42 3291.42 1388 3268.5 1388L2863.5 1388C2840.58 1388 2822 1369.42 2822 1346.5Z"></path></g></svg></a>
-<nav aria-label="Principal">
-<ul class="nav-links">
-<li><a href="index.html" aria-current="page">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="estudio.html">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</nav>
-<a class="btn btn-dark btn-sm nav-cta" href="contacto.html">Escríbenos</a>
-<button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span></button>
-</div>
-<nav class="nav-panel" id="menu-movil" aria-label="Menú" hidden>
-<a href="index.html" aria-current="page">Inicio</a>
-<a href="servicios.html">Servicios</a>
-<a href="proyectos.html">Proyectos</a>
-<a href="estudio.html">Estudio</a>
-<a href="contacto.html">Contacto</a>
-<a class="btn btn-primary" href="contacto.html">Escríbenos</a>
-</nav>
-
-</div>
+<pw-nav pagina="inicio"></pw-nav>
 
 <main id="contenido">
 
@@ -67,23 +46,23 @@
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="grid-glow" aria-hidden="true"></div>
 <div aria-hidden="true">
-<span class="chip" style="top: 23%; left: 7%; --z: 50; --i: 0; --c: var(--blue)">&lt;nav&gt;</span>
-<span class="chip" style="top: 19%; right: 8%; --z: -70; --i: 1; --c: var(--green)">display: grid;</span>
-<span class="chip" style="top: 55%; left: 4%; --z: 90; --i: 2; --c: var(--orange)">fetch("/api")</span>
-<span class="chip" style="top: 60%; right: 5%; --z: -45; --i: 3; --c: var(--blue)">@keyframes</span>
-<span class="chip" style="bottom: 15%; left: 15%; --z: 65; --i: 4; --c: var(--green)">git push</span>
-<span class="chip" style="bottom: 13%; right: 17%; --z: -95; --i: 5; --c: var(--orange)">:has()</span>
+<span class="chip" style="top: 23%; left: 7%; --z: 50; --i: 0; --c: var(--blue)">En menos de un mes</span>
+<span class="chip" style="top: 19%; right: 8%; --z: -70; --i: 1; --c: var(--green)">Bajo coste</span>
+<span class="chip" style="top: 55%; left: 4%; --z: 90; --i: 2; --c: var(--orange)">Profesional</span>
+<span class="chip" style="top: 60%; right: 5%; --z: -45; --i: 3; --c: var(--blue)">Eficiencia y velocidad</span>
+<span class="chip" style="bottom: 15%; left: 15%; --z: 65; --i: 4; --c: var(--green)">Protección y seguridad</span>
+<span class="chip" style="bottom: 13%; right: 17%; --z: -95; --i: 5; --c: var(--orange)">A tu medida</span>
 </div>
 <div class="wrap hero-in">
 <p class="eyebrow fade-in" style="--i: 0">Diseño y desarrollo web</p>
 <h1 class="display"><span class="w" style="--i: 1">Webs</span> <span class="w" style="--i: 2">que</span> <span class="w" style="--i: 3">se</span> <span class="w" style="--i: 4">sienten</span> <span class="w w-accent" style="--i: 5">vivas.</span></h1>
-<p class="lead fade-in" style="--i: 7">Diseñamos y programamos webs rápidas, elegantes y hechas a medida. Tú nos cuentas tu idea; nosotros la convertimos en una experiencia que tus clientes recuerdan.</p>
+<p class="lead fade-in" style="--i: 7">Diseñamos y programamos páginas web rápidas, elegantes y hechas a medida. Tú nos cuentas tu idea, nosotros la convertimos en una experiencia que tus clientes recordarán.</p>
 <div class="actions fade-in" style="--i: 9">
 <a class="btn btn-primary btn-lg" href="contacto.html">Empezar mi proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-ghost btn-lg" href="proyectos.html">Ver proyectos</a>
 </div>
 </div>
-<div class="scroll-cue" aria-hidden="true"><span>Desliza</span><i></i></div>
+<div class="scroll-cue" aria-hidden="true"><span>Ver más</span><i></i></div>
 </header>
 
 <section class="sec" aria-labelledby="t-serv">
@@ -100,7 +79,7 @@
 <a class="tcard" href="servicios.html" style="--acc: var(--blue)" data-tilt>
 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M3 9h18M8 21h8M12 17v4"></path></svg></span>
 <h3 class="h3">Diseño web</h3>
-<p>Webs únicas, pensadas para tu marca y perfectas en móvil, tablet y ordenador.</p>
+<p>Webs únicas, pensadas para tu marca y perfectas para funcionar en móvil, tablet y ordenador.</p>
 <span class="more">Saber más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
 </div>
@@ -116,7 +95,7 @@
 <a class="tcard" href="servicios.html" style="--acc: var(--orange)" data-tilt>
 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3M21 14v.01M14 21h7v-4"></path></svg></span>
 <h3 class="h3">Cartas digitales QR</h3>
-<p>Tu carta en el móvil de tus clientes con solo escanear un código. Cambia los precios al momento.</p>
+<p>Tu carta en el móvil de tus clientes con solo escanear un código. Actualiza tu carta al momento.</p>
 <span class="more">Saber más <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
 </div>
@@ -130,18 +109,23 @@
 <div class="wrap evo-grid">
 <div class="evo-copy">
 <p class="eyebrow">Cómo nace una web</p>
-<h2 class="h2" id="t-evo">Del código a la experiencia.</h2>
-<p class="lead">Cada web empieza con unas líneas de código y termina siendo algo que tus clientes disfrutan. Desliza y míralo.</p>
+<h2 class="h2" id="t-evo">Del boceto a tu web en línea.</h2>
+<p class="lead">Cada web empieza con un boceto, se convierte en código y termina publicada para que tus clientes la visiten. Desliza y míralo.</p>
 <ol class="evo-steps">
-<li class="st st-1"><span class="st-n">01</span><span><strong>Código</strong><span>Escribimos cada línea a mano: limpia, ligera y rápida.</span></span></li>
-<li class="st st-2"><span class="st-n">02</span><span><strong>Estructura</strong><span>Ordenamos el contenido para que todo se entienda a la primera.</span></span></li>
-<li class="st st-3"><span class="st-n">03</span><span><strong>Experiencia</strong><span>Color, movimiento y detalle: lo que hace que tu web se recuerde.</span></span></li>
+<li class="st st-1"><span class="st-n">01</span><span><strong>Diseño</strong><span>Pensamos el diseño y la forma de tu página: qué va en cada sitio y cómo se verá.</span></span></li>
+<li class="st st-2"><span class="st-n">02</span><span><strong>Código</strong><span>Programamos y preparamos tu web para que sea limpia, ligera y rápida.</span></span></li>
+<li class="st st-3"><span class="st-n">03</span><span><strong>Puesta en marcha</strong><span>La terminamos y la ponemos en línea para que cualquiera pueda visitarla.</span></span></li>
 </ol>
 <div class="evo-bar" aria-hidden="true"><i></i></div>
 </div>
 <div class="evo-win" aria-hidden="true">
-<div class="win-top"><i></i><i></i><i></i><span class="win-url">tunegocio.es</span></div>
+<div class="win-top"><i></i><i></i><i></i><span class="win-url">tunegocio.es</span><span class="win-live">En línea</span></div>
 <div class="win-body">
+<div class="ly ly-wire">
+<div class="w-row" style="height: 34px"><div class="wb" style="--b: 0; width: 24%">logo</div><div class="wb" style="--b: 1; width: 40%; margin-left: auto">menú</div></div>
+<div class="w-row" style="flex: 1"><div class="wb" style="--b: 2; flex: 1.1">título y botón</div><div class="wb" style="--b: 3; flex: 1">imagen</div></div>
+<div class="w-row" style="height: 96px"><div class="wb" style="--b: 4; flex: 1">tarjeta</div><div class="wb" style="--b: 5; flex: 1">tarjeta</div><div class="wb" style="--b: 6; flex: 1">tarjeta</div></div>
+</div>
 <div class="ly ly-code">
 <div class="cl" style="--l: 0"><span class="t-k">&lt;header</span> <span class="t-a">class</span>=<span class="t-s">"hero"</span><span class="t-k">&gt;</span></div>
 <div class="cl" style="--l: 1"><span class="ind"></span><span class="t-k">&lt;h1&gt;</span>Fuego lento, sabor de verdad<span class="t-k">&lt;/h1&gt;</span></div>
@@ -152,11 +136,6 @@
 <div class="cl" style="--l: 6"><span class="t-a">.hero a</span> { border-radius: 999px; }</div>
 <div class="cl" style="--l: 7"></div>
 <div class="cl" style="--l: 8"><span class="t-a">const</span> io = <span class="t-a">new</span> IntersectionObserver(mostrar);</div>
-</div>
-<div class="ly ly-wire">
-<div class="w-row" style="height: 34px"><div class="wb" style="--b: 0; width: 24%">logo</div><div class="wb" style="--b: 1; width: 40%; margin-left: auto">menú</div></div>
-<div class="w-row" style="flex: 1"><div class="wb" style="--b: 2; flex: 1.1">título y botón</div><div class="wb" style="--b: 3; flex: 1">imagen</div></div>
-<div class="w-row" style="height: 96px"><div class="wb" style="--b: 4; flex: 1">tarjeta</div><div class="wb" style="--b: 5; flex: 1">tarjeta</div><div class="wb" style="--b: 6; flex: 1">tarjeta</div></div>
 </div>
 <div class="ly ly-site">
 <div class="sx sx-nav" style="--k: 0"><b>Casa Lumbre</b><span>Carta</span><span>Reservas</span><span>Contacto</span><em>Reservar</em></div>
@@ -182,9 +161,59 @@
 </div>
 </section>
 
-<section class="stmt" aria-label="Nuestra idea">
+<section class="stmt" aria-label="Nuestra idea y precio" data-dark-zone>
 <div class="wrap">
-<p class="stmt-text" data-fx="fill" style="--n: 21"><span style="--w: 0">Tu</span> <span style="--w: 1">web</span> <span style="--w: 2">es</span> <span style="--w: 3">tu</span> <span class="hl" style="--w: 4">mejor</span> <span class="hl" style="--w: 5">comercial:</span> <span style="--w: 6">trabaja</span> <span style="--w: 7">las</span> <span style="--w: 8">24</span> <span style="--w: 9">horas,</span> <span style="--w: 10">nunca</span> <span style="--w: 11">se</span> <span style="--w: 12">cansa</span> <span style="--w: 13">y</span> <span style="--w: 14">está</span> <span style="--w: 15">en</span> <span style="--w: 16">el</span> <span style="--w: 17">bolsillo</span> <span style="--w: 18">de</span> <span style="--w: 19">cada</span> <span style="--w: 20">cliente.</span></p>
+<p class="stmt-text" data-fx="fill" style="--n: 21">
+    <span style="--w: 0">Tu</span>
+     <span style="--w: 1">web</span>
+     <span style="--w: 2">es</span>
+     <span class="hl" style="--w: 3">tu</span>
+     <span class="hl" style="--w: 4">mejor</span>
+     <span class="hl" style="--w: 5">comercial:</span>
+     <span style="--w: 6">trabaja</span>
+     <span style="--w: 7">las</span>
+     <span style="--w: 8">24</span>
+     <span style="--w: 9">horas,</span>
+     <span style="--w: 10">nunca</span>
+     <span style="--w: 11">se</span>
+     <span style="--w: 12">cansa</span>
+     <span style="--w: 13">y</span>
+     <span style="--w: 14">está</span>
+     <span style="--w: 15">en</span>
+     <span style="--w: 16">el</span>
+     <span style="--w: 17">bolsillo</span>
+     <span style="--w: 18">de</span>
+     <span style="--w: 19">cada</span>
+     <span style="--w: 20">cliente.</span>
+    </p>
+<div class="price" data-fx="price">
+<div class="price-copy">
+<p class="eyebrow pr-i" style="--i: 0">Cuánto cuesta</p>
+<p class="price-from pr-i" style="--i: 1">Tu web desde</p>
+<p class="price-num pr-i" style="--i: 1.5" aria-label="600 euros"><span class="price-val" aria-hidden="true">600</span><span class="price-cur" aria-hidden="true">€</span></p>
+<p class="price-tag pr-i" style="--i: 2"><span>Pago único</span></p>
+<p class="lead pr-i" style="--i: 2.5">Es el precio de partida para crear tu web. Cuantas más funciones necesite, más trabajo lleva, por eso el precio final lo acordamos juntos en tu presupuesto. Sin sorpresas.</p>
+</div>
+<div class="pc" role="img" aria-label="El precio sube según las funciones de la web: desde 600 euros para una web esencial hasta el precio acordado en el presupuesto para una web a medida.">
+<span class="pc-y" aria-hidden="true">Precio</span>
+<ol class="pc-bars" aria-hidden="true">
+<li class="pc-start" style="--k: 0; --h: .24"><span class="pc-val">600 €</span><span class="pc-bar"></span><span class="pc-lb">Web esencial</span></li>
+<li style="--k: 1; --h: .38"><span class="pc-val">+</span><span class="pc-bar"></span><span class="pc-lb">Varios idiomas</span></li>
+<li style="--k: 2; --h: .52"><span class="pc-val">+</span><span class="pc-bar"></span><span class="pc-lb">Reservas online</span></li>
+<li style="--k: 3; --h: .66"><span class="pc-val">+</span><span class="pc-bar"></span><span class="pc-lb">Registro de usuarios</span></li>
+<li style="--k: 4; --h: .8"><span class="pc-val">+</span><span class="pc-bar"></span><span class="pc-lb">Pagos en línea</span></li>
+<li class="pc-end" style="--k: 5; --h: 1"><span class="pc-val">Tu presupuesto</span><span class="pc-bar"></span><span class="pc-lb">Web a medida</span></li>
+</ol>
+
+<!--
+
+# Falta crear la página de características
+
+<span class="pc-x" aria-hidden="true">Más funciones <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+-->
+
+</div>
+</div>
 </div>
 </section>
 
@@ -204,13 +233,7 @@
 <a class="mock-card" href="proyectos.html">
 <div class="mock v1" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #14100d"><img class="mock-shot" src="assets/img/proyectos/restaurante.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="mock-cap"><span>Restaurante</span><span>Web con reservas</span></div>
 </a>
@@ -218,27 +241,15 @@
 <a class="mock-card" href="proyectos.html">
 <div class="mock v2" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #fff8ec"><img class="mock-shot" src="assets/img/proyectos/tienda.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
-<div class="mock-cap"><span>Tienda online</span><span>Catálogo y pagos</span></div>
+<div class="mock-cap"><span>Tienda de juguetes</span><span>Catálogo y pagos</span></div>
 </a>
 
 <a class="mock-card" href="proyectos.html">
 <div class="mock v3" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #dfe6d8"><img class="mock-shot" src="assets/img/proyectos/carta.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="mock-cap"><span>Carta digital QR</span><span>Menú en el móvil</span></div>
 </a>
@@ -246,15 +257,9 @@
 <a class="mock-card" href="proyectos.html">
 <div class="mock v4" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #000"><img class="mock-shot" src="assets/img/proyectos/app.webp?v=2" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
-<div class="mock-cap"><span>Portfolio</span><span>Galería animada</span></div>
+<div class="mock-cap"><span>Web de servicios</span><span>Planes y precios</span></div>
 </a>
 
 </div>
@@ -263,55 +268,31 @@
 <a class="mock-card" href="proyectos.html">
 <div class="mock v5" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #efe6da"><img class="mock-shot" src="assets/img/proyectos/veterinaria.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
-<div class="mock-cap"><span>Clínica</span><span>Cita previa online</span></div>
+<div class="mock-cap"><span>Clínica veterinaria</span><span>Cita previa online</span></div>
 </a>
 
 <a class="mock-card" href="proyectos.html">
 <div class="mock v6" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #2a2420"><img class="mock-shot" src="assets/img/proyectos/bar.webp?v=2" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
-<div class="mock-cap"><span>Bar de copas</span><span>Carta en dos idiomas</span></div>
+<div class="mock-cap"><span>Bar de tapas</span><span>Carta en dos idiomas</span></div>
 </a>
 
 <a class="mock-card" href="proyectos.html">
 <div class="mock v1" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #cfc8bf"><img class="mock-shot" src="assets/img/proyectos/panaderia.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
-<div class="mock-cap"><span>Panadería</span><span>Pedidos para recoger</span></div>
+<div class="mock-cap"><span>Panadería</span><span>Catálogo de productos</span></div>
 </a>
 
 <a class="mock-card" href="proyectos.html">
 <div class="mock v2" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #f4efe8"><img class="mock-shot" src="assets/img/proyectos/yoga.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="mock-cap"><span>Estudio de yoga</span><span>Horarios y reservas</span></div>
 </a>
@@ -345,7 +326,7 @@
 <div class="cta" data-fx="in" data-glow>
 <div class="cta-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
 <p class="eyebrow rv">¿Tienes un proyecto en mente?</p>
-<h2 class="cta-title rv" style="--d: 1" id="t-cta">¿Empezamos?</h2>
+<h2 class="cta-title rv" style="--d: 1" id="t-cta">Empezemos</h2>
 <p class="lead rv" style="--d: 2">Cuéntanos tu idea. Te respondemos con una propuesta clara, sin compromiso y sin tecnicismos.</p>
 <div class="rv" style="--d: 3">
 <div class="magnet" data-magnet>
@@ -358,42 +339,7 @@
 
 </main>
 
-<footer class="foot">
-<div class="wrap foot-in">
-<div class="foot-brand">
-<strong>Profesional Web</strong>
-<p class="body-sm">Diseño y desarrollo web a medida. Webs rápidas, elegantes y fáciles de usar.</p>
-</div>
-<div>
-<p class="foot-h">Páginas</p>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="estudio.html">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Servicios</p>
-<ul>
-<li><a href="servicios.html">Diseño web</a></li>
-<li><a href="servicios.html">Desarrollo a medida</a></li>
-<li><a href="servicios.html">Mantenimiento</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Contacto</p>
-<ul>
-<li><a href="contacto.html">[tu@email.com]</a></li>
-<li><span>[Tu teléfono]</span></li>
-<li><span>[Tu ciudad]</span></li>
-</ul>
-</div>
-</div>
-<div class="wrap foot-bottom"><span>© 2026 Profesional Web</span><nav class="foot-legal" aria-label="Textos legales"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a></nav><span>Hecho a mano, línea a línea.</span></div>
-<p class="foot-giant" data-fx="end" aria-hidden="true"><span>Profesional Web</span></p>
-</footer>
+<pw-footer pagina="inicio"></pw-footer>
 </div>
 </body>
 </html>

@@ -45,6 +45,26 @@
   var hero = root.querySelector('.hero');
   var raf = 0;
 
+  // Sección que vuelve la página negra ("Tu web es tu mejor comercial" + precio)
+  var darkZone = root.querySelector('[data-dark-zone]');
+  // Número del precio que cuenta de 0 a 600 la primera vez que se ve
+  var priceVal = root.querySelector('.price-val');
+  var priceDone = false;
+  function countPrice() {
+    priceDone = true;
+    var target = parseInt(priceVal.textContent, 10) || 600;
+    var t0 = 0;
+    function step(t) {
+      if (!t0) t0 = t;
+      var k = Math.min(1, (t - t0) / 1600);
+      var eased = 1 - Math.pow(1 - k, 4);
+      priceVal.textContent = String(Math.round(target * eased));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    priceVal.textContent = '0';
+    requestAnimationFrame(step);
+  }
+
   if (!live) {
     // Sin movimiento: todo visible desde el principio
     each(fxEls, function (el) {
@@ -59,6 +79,12 @@
     raf = 0;
     var sy = window.scrollY || window.pageYOffset || 0;
     setAttr(root, 'data-scrolled', sy > 40 ? '1' : '0');
+    if (darkZone) {
+      // Negro mientras la sección ocupa el centro de la pantalla
+      var dz = darkZone.getBoundingClientRect();
+      var vhh = window.innerHeight;
+      setAttr(root, 'data-dark', dz.top < vhh * 0.6 && dz.bottom > vhh * 0.4 ? '1' : '0');
+    }
     if (!live) return;
 
     var vh = window.innerHeight;
@@ -95,6 +121,11 @@
         // Filas de proyectos que se desplazan en sentidos opuestos
         var lim = 0.5 + r.height / (2 * vh);
         setVar(el, '--c', clamp((r.top + r.height / 2 - vh / 2) / vh, -lim, lim).toFixed(4));
+      } else if (type === 'price') {
+        // Bloque del precio: aparece y las barras crecen al bajar
+        var pp = clamp01((vh * 0.92 - r.top) / (vh * 0.5 + r.height * 0.45));
+        setVar(el, '--p', pp.toFixed(3));
+        if (!priceDone && priceVal && pp > 0.12) countPrice();
       } else if (type === 'track') {
         // "Del código a la experiencia" (Inicio)
         var span = r.height - vh;

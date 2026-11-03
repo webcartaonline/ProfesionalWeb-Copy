@@ -10,8 +10,11 @@
 <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=1">
-<script src="js/main.js?v=1" defer></script>
+<script src="js/componentes.js?v=1"></script>
+<link rel="stylesheet" href="css/general.css?v=1">
+<link rel="stylesheet" href="css/proyectos.css?v=2">
+<script src="js/general.js?v=1" defer></script>
+<script src="js/proyectos.js?v=1" defer></script>
 </head>
 <body>
 <div class="pw">
@@ -21,31 +24,7 @@
 <div class="cursor-lens" aria-hidden="true"></div>
 <svg class="pw-filters" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pw-lens-48" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-8" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="0.9" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter><filter id="pw-lens-88" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-14" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="1.2" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter></svg>
 
-<div class="nav">
-<div class="nav-in">
-<a class="nav-logo" href="index.html"><svg viewBox="2800 1075 910 325" width="101" height="36" role="img" aria-label="Profesional Web"><g fill="currentColor"><text class="lw-b" x="2808.28" y="1216" font-family="Google Sans, sans-serif" font-weight="700" font-size="165">Profesional</text><text class="lw-r" x="3355.52" y="1382" font-family="Google Sans, sans-serif" font-weight="400" font-size="165">Web</text><path d="M2822 1346.5C2822 1323.58 2840.58 1305 2863.5 1305L3268.5 1305C3291.42 1305 3310 1323.58 3310 1346.5C3310 1369.42 3291.42 1388 3268.5 1388L2863.5 1388C2840.58 1388 2822 1369.42 2822 1346.5Z"></path></g></svg></a>
-<nav aria-label="Principal">
-<ul class="nav-links">
-<li><a href="index.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html" aria-current="page">Proyectos</a></li>
-<li><a href="estudio.html">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</nav>
-<a class="btn btn-dark btn-sm nav-cta" href="contacto.html">Escríbenos</a>
-<button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span></button>
-</div>
-<nav class="nav-panel" id="menu-movil" aria-label="Menú" hidden>
-<a href="index.html">Inicio</a>
-<a href="servicios.html">Servicios</a>
-<a href="proyectos.html" aria-current="page">Proyectos</a>
-<a href="estudio.html">Estudio</a>
-<a href="contacto.html">Contacto</a>
-<a class="btn btn-primary" href="contacto.html">Escríbenos</a>
-</nav>
-
-</div>
+<pw-nav pagina="proyectos"></pw-nav>
 
 <main id="contenido">
 
@@ -58,7 +37,11 @@
 <div class="grid-bg" aria-hidden="true"></div>
 <div class="wrap phead-in">
 <p class="eyebrow fade-in" style="--i: 0">Proyectos</p>
-<h1 class="page-title"><span class="w" style="--i: 1">Ideas</span> <span class="w" style="--i: 2">que</span> <span class="w" style="--i: 3">ya</span> <span class="w w-accent" style="--i: 4">funcionan.</span></h1>
+<h1 class="page-title">
+     <span class="w" style="--i: 1">Ideas</span>
+     <span class="w" style="--i: 2">que</span>
+     <span class="w w-accent" style="--i: 4">funcionan.</span>
+</h1>
 <p class="lead fade-in" style="--i: 6">Webs, cartas digitales y tiendas online hechas a medida. Cada proyecto tiene su propia personalidad, igual que cada negocio.</p>
 </div>
 </header>
@@ -74,115 +57,79 @@
 <div class="pj-grid">
 
 <article class="pj-card" data-cat="web" style="--i: 0" data-tilt>
-<div class="mock v1" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #14100d"><img class="mock-shot" src="assets/img/proyectos/restaurante.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
 <div class="pj-top"><span class="badge">Ejemplo</span><span>Restaurante · Web</span></div>
 <h2 class="pj-title">Web con reservas online</h2>
-<p class="pj-desc">Carta, galería de platos y reservas en tres clics.</p>
+<p class="pj-desc">Platos a la brasa, carta y reserva de mesa en tres clics.</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
 <article class="pj-card" data-cat="qr" style="--i: 1" data-tilt>
-<div class="mock v3" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #dfe6d8"><img class="mock-shot" src="assets/img/proyectos/carta.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
 <div class="pj-top"><span class="badge">Ejemplo</span><span>Cafetería · Carta QR</span></div>
 <h2 class="pj-title">Carta digital con fotos</h2>
-<p class="pj-desc">Precios que se cambian al momento, sin volver a imprimir.</p>
+<p class="pj-desc">El cliente escanea en la mesa y ve la carta con fotos. Los precios se cambian al momento.</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
 <article class="pj-card" data-cat="tienda" style="--i: 2" data-tilt>
-<div class="mock v2" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #fff8ec"><img class="mock-shot" src="assets/img/proyectos/tienda.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
-<div class="pj-top"><span class="badge">Ejemplo</span><span>Moda · Tienda</span></div>
-<h2 class="pj-title">Tienda online</h2>
-<p class="pj-desc">Catálogo con filtros, carrito y pagos seguros.</p>
+<div class="pj-top"><span class="badge">Ejemplo</span><span>Juguetería · Tienda online</span></div>
+<h2 class="pj-title">Tienda de juguetes</h2>
+<p class="pj-desc">Catálogo por categorías y edades, carrito y pagos seguros.</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
 <article class="pj-card" data-cat="web" style="--i: 3" data-tilt>
-<div class="mock v4" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #000"><img class="mock-shot" src="assets/img/proyectos/app.webp?v=2" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
-<div class="pj-top"><span class="badge">Ejemplo</span><span>Fotografía · Web</span></div>
-<h2 class="pj-title">Portfolio con galería animada</h2>
-<p class="pj-desc">Las imágenes cobran vida al deslizar.</p>
+<div class="pj-top"><span class="badge">Ejemplo</span><span>Servicios digitales · Web</span></div>
+<h2 class="pj-title">Página de planes y precios</h2>
+<p class="pj-desc">Compara los planes de un vistazo y elige el tuyo en un clic.</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
 <article class="pj-card" data-cat="qr" style="--i: 4" data-tilt>
-<div class="mock v6" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #cfc8bf"><img class="mock-shot" src="assets/img/proyectos/panaderia.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
-<div class="pj-top"><span class="badge">Ejemplo</span><span>Bar de copas · Carta QR</span></div>
-<h2 class="pj-title">Carta en dos idiomas</h2>
-<p class="pj-desc">Español e inglés con un solo toque.</p>
+<div class="pj-top"><span class="badge">Ejemplo</span><span>Panadería · Carta QR</span></div>
+<h2 class="pj-title">Escaparate de productos</h2>
+<p class="pj-desc">Panes, bollería y pasteles con su precio y etiquetas como «Más vendido».</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
 
 <article class="pj-card" data-cat="web" style="--i: 5" data-tilt>
-<div class="mock v5" aria-hidden="true">
+<div class="mock" aria-hidden="true">
 <div class="mock-bar"><i></i><i></i><i></i></div>
-<div class="mock-screen"><div class="mock-in">
-<div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-<div class="m-hero"><div class="m-txt"><b></b><b></b><span></span><span></span><em></em></div><div class="m-img"></div></div>
-<div class="m-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-<div class="m-band"></div>
-<div class="m-grid"><i></i><i></i><i></i></div>
-</div></div>
+<div class="mock-screen" style="background: #f4efe8"><img class="mock-shot" src="assets/img/proyectos/yoga.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
 </div>
 <div class="pj-meta">
-<div class="pj-top"><span class="badge">Ejemplo</span><span>Clínica · Web</span></div>
-<h2 class="pj-title">Web con cita previa</h2>
-<p class="pj-desc">Los pacientes eligen día y hora desde el móvil.</p>
+<div class="pj-top"><span class="badge">Ejemplo</span><span>Estudio de yoga · Web</span></div>
+<h2 class="pj-title">Horarios y reservas de clases</h2>
+<p class="pj-desc">El horario del día y la reserva de plaza con un solo toque.</p>
 <a class="link-arrow" href="contacto.html" style="align-self: flex-start">Quiero algo así <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </article>
@@ -200,42 +147,7 @@
 
 </main>
 
-<footer class="foot">
-<div class="wrap foot-in">
-<div class="foot-brand">
-<strong>Profesional Web</strong>
-<p class="body-sm">Diseño y desarrollo web a medida. Webs rápidas, elegantes y fáciles de usar.</p>
-</div>
-<div>
-<p class="foot-h">Páginas</p>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="estudio.html">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Servicios</p>
-<ul>
-<li><a href="servicios.html">Diseño web</a></li>
-<li><a href="servicios.html">Desarrollo a medida</a></li>
-<li><a href="servicios.html">Mantenimiento</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Contacto</p>
-<ul>
-<li><a href="contacto.html">[tu@email.com]</a></li>
-<li><span>[Tu teléfono]</span></li>
-<li><span>[Tu ciudad]</span></li>
-</ul>
-</div>
-</div>
-<div class="wrap foot-bottom"><span>© 2026 Profesional Web</span><nav class="foot-legal" aria-label="Textos legales"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a></nav><span>Hecho a mano, línea a línea.</span></div>
-<p class="foot-giant" data-fx="end" aria-hidden="true"><span>Profesional Web</span></p>
-</footer>
+<pw-footer pagina="proyectos"></pw-footer>
 </div>
 </body>
 </html>

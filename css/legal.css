@@ -1,0 +1,55 @@
+/* =========================================================
+   Profesional Web · estilos de los textos legales
+   Los usan las tres páginas legales, que tienen el mismo diseño:
+   aviso-legal.html, privacidad.html y cookies.html.
+   Se carga después de general.css.
+   ========================================================= */
+
+/* ---------- Textos legales ---------- */
+.legal-title{margin:0;font-size:clamp(2.25rem,1.2rem + 3.6vw,4.25rem);font-weight:600;line-height:1.02;letter-spacing:-.04em}
+.legal-meta{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;font-size:.875rem;color:var(--ink-2)}
+.legal-wrap{display:flex;flex-wrap:wrap;align-items:flex-start;gap:3rem 5rem;padding-block:4rem 6rem}
+.toc{flex:1 1 220px;max-width:260px;position:sticky;top:6.5rem}
+.toc-k{margin:0 0 1rem;font-size:.8125rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.toc a{display:flex;align-items:baseline;gap:.75rem;min-height:2.5rem;padding:.5rem 0 .5rem 1rem;margin-left:-1px;border-left:2px solid transparent;color:var(--ink-2);font-size:.9375rem;line-height:1.4;text-decoration:none;transition:color .2s,border-color .2s}
+.toc a:hover{color:var(--ink);border-color:var(--ink)}
+.toc a span{flex:none;font:500 .8125rem/1.4 var(--mono)}
+.prose{flex:999 1 520px;min-width:0;max-width:46rem}
+.rv-soft{--q:clamp(0,calc(var(--p,1) * 2),1);opacity:var(--q);transform:translate3d(0,calc((1 - var(--q)) * 16px),0);transition:opacity .45s linear,transform .7s var(--ease)}
+.summary{--acc:var(--blue);padding:1.75rem;border-radius:var(--r-lg);background:var(--bg-soft);border:1px solid var(--line)}
+.summary h2{margin:0 0 1rem;font-size:1.125rem;font-weight:700;letter-spacing:-.01em}
+.summary ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.summary li{display:flex;gap:.75rem;font-size:1rem;line-height:1.55}
+.summary li::before{content:"";flex:none;width:.5rem;height:.5rem;margin-top:.55em;border-radius:50%;background:var(--acc)}
+.summary li:nth-child(2)::before{background:var(--green)}
+.summary li:nth-child(3)::before{background:var(--orange)}
+.prose section{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--line);scroll-margin-top:6rem}
+.prose h2{margin:0 0 1rem;display:flex;align-items:baseline;gap:.875rem;font-size:clamp(1.375rem,1.2rem + .6vw,1.75rem);font-weight:700;line-height:1.2;letter-spacing:-.02em}
+.prose h2 span{flex:none;font:500 .875rem/1 var(--mono);color:var(--ink-2)}
+.prose h3{margin:1.75rem 0 .5rem;font-size:1.0625rem;font-weight:700}
+.prose p{margin:0 0 1rem;font-size:1.0625rem;line-height:1.75;color:#262626;text-wrap:pretty}
+.prose ul{margin:0 0 1rem;padding-left:1.25rem;font-size:1.0625rem;line-height:1.75;color:#262626}
+.prose li{margin-bottom:.375rem;padding-left:.25rem}
+.prose li::marker{color:var(--ink-2)}
+.prose a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--blue-dark)}
+.prose strong{font-weight:600;color:var(--ink)}
+.data-box{margin:0 0 1.25rem;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-md)}
+.data{width:100%;border-collapse:collapse;font-size:.9375rem;line-height:1.55}
+.data th,.data td{padding:.75rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.data th{font-weight:600;background:var(--bg-soft)}
+.data tbody th{width:36%}
+.data tr:last-child th,.data tr:last-child td{border-bottom:0}
+.note{margin:0 0 1rem;padding:1rem 1.25rem;border-radius:var(--r-md);background:rgb(23 78 166 / .06);font-size:.9375rem;line-height:1.6;color:var(--ink)}
+.legal-next{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--line)}
+.legal-next-k{margin:0 0 1rem;font-size:.8125rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.legal-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1rem}
+.legal-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;border-radius:var(--r-lg);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:border-color .25s,transform .45s var(--ease),box-shadow .45s var(--ease)}
+.legal-card:hover{color:var(--ink);border-color:var(--line-2);transform:translateY(-3px);box-shadow:0 24px 50px -30px rgb(10 10 10 / .3)}
+.legal-card span{display:flex;flex-direction:column;gap:.125rem}
+.legal-card small{font-size:.8125rem;color:var(--ink-2)}
+.legal-card strong{font-size:1.0625rem;font-weight:600}
+.legal-card svg{flex:none;width:1.25rem;height:1.25rem;transition:transform .25s var(--ease)}
+.legal-card:hover svg{transform:translateX(4px)}
+@media (max-width:900px){.toc{position:static;max-width:none}}

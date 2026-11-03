@@ -11,8 +11,12 @@ Está optimizada para cargar rápido en cualquier navegador y móvil, y preparad
 | `servicios.html`, `proyectos.html`, `estudio.html`, `contacto.html` | El resto de páginas |
 | `aviso-legal.html`, `privacidad.html`, `cookies.html` | Textos legales |
 | `404.html` | La página que ve alguien si entra en una dirección que no existe |
-| `css/styles.css` | Todo el diseño: colores, tamaños y animaciones. Está dividido en secciones con títulos. |
-| `js/main.js` | Lo que se mueve o reacciona: animaciones al hacer scroll, menú del móvil, capas de Servicios, filtros de Proyectos, preguntas frecuentes y formulario. |
+| `css/general.css` | El diseño que comparten **todas** las páginas: colores, letras, botones, menú, pie, cursor y modo oscuro. |
+| `css/inicio.css`, `css/servicios.css`, `css/proyectos.css`, `css/estudio.css`, `css/contacto.css` | El diseño que **solo** tiene esa página. |
+| `css/legal.css` | El diseño de los tres textos legales (aviso legal, privacidad y cookies). Comparten archivo porque son iguales. |
+| `js/componentes.js` | **El menú de arriba y el pie de página.** Están solo aquí: si cambias algo en este archivo, cambia en todas las páginas a la vez. |
+| `js/general.js` | Lo que se mueve o reacciona en **todas** las páginas: animaciones al hacer scroll, menú del móvil, efectos del ratón y la página que se vuelve negra. |
+| `js/inicio.js`, `js/servicios.js`, `js/proyectos.js`, `js/contacto.js` | Lo que **solo** hace esa página: precio y ventana animada (Inicio), pestañas y línea de tiempo (Servicios), filtros (Proyectos), preguntas frecuentes y formulario (Contacto). Estudio y los textos legales no necesitan uno propio. |
 | `assets/fonts/` | Las fuentes Google Sans y Google Sans Code. Están dentro de tu web, así que no se conecta a Google. |
 | `assets/img/` | Icono, tu foto (en 3 formatos: `.avif`, `.webp` y `.jpg`) y dos imágenes del efecto cristal del círculo que sigue al ratón. |
 | `favicon.ico` | El icono de la pestaña del navegador. |
@@ -39,7 +43,7 @@ Los archivos `_headers`, `_redirects` y `404.html` solo hacen su trabajo cuando 
 
 Todo lo que tienes que completar está **entre corchetes**. En Visual Studio Code pulsa `Ctrl + Shift + F` y busca `[` para encontrarlos todos.
 
-- `[tu@email.com]`, `[Tu teléfono]`, `[Tu ciudad]`: pie de todas las páginas y Contacto.
+- `[tu@email.com]`, `[Tu teléfono]`, `[Tu ciudad]`: página de Contacto (en el pie ya están puestos, en `js/componentes.js`).
 - `[Tu NIF]`, `[Tu dirección completa]`, `[tudominio.es]`: `aviso-legal.html` y `privacidad.html`.
 - `[Proveedor de alojamiento]` (pon **Cloudflare**), `[Proveedor de correo]`, `[Servicio de formularios]`, `[12 meses]`: `privacidad.html`.
 - `[X semanas]`: preguntas frecuentes de `contacto.html`.
@@ -81,18 +85,25 @@ En un minuto tendrás tu web en una dirección parecida a `profesional-web.tu-cu
 
 ## Cambios habituales
 
+- **Menú y pie de página:** abre `js/componentes.js`. Arriba del todo, en «TUS DATOS», están los enlaces del menú, el botón, tu email, teléfono, ciudad y la frase del pie. Cambias una vez y se cambia en todas las páginas.
+  - Para **añadir una página al menú**, copia una línea de `MENU` (por ejemplo la de Estudio) y cambia el texto y el archivo. En la página nueva pon `<pw-nav pagina="nombre"></pw-nav>` y `<pw-footer pagina="nombre"></pw-footer>`, donde `nombre` es el `id` que le has dado.
+  - Si cambias `componentes.js`, sube su número `?v=` en las páginas (igual que con el CSS, mira más abajo).
 - **Textos:** abre el `.html` de la página y cambia el texto directamente.
-- **Colores:** en `css/styles.css`, busca `--blue`, `--green` y `--orange` (están al principio de la sección de estilos).
+- **Dónde cambiar el diseño:** si es algo que se ve en todas las páginas (colores, botones, letras…), en `css/general.css`. Si solo sale en una página, en el CSS de esa página (por ejemplo, el bloque del precio está en `css/inicio.css`). Con el JavaScript igual: `js/general.js` o el de la página.
+  - Cada página carga primero lo general y después lo suyo. Por eso, si pones la misma regla en los dos, gana la de la página.
+- **Colores:** en `css/general.css`, busca `--blue`, `--green` y `--orange` (están al principio).
 - **Proyectos:** en `proyectos.html`, cada proyecto es un bloque `<article class="pj-card" data-cat="...">`. `data-cat` decide en qué filtro aparece: `web`, `qr` o `tienda`.
 - **Quitar la animación de entrada de Inicio:** en `index.html`, borra el bloque `<div class="intro">…</div>`. (Ahora solo sale la primera vez que alguien entra; si vuelve a Inicio desde otra página, ya no la ve.)
 
-### Si cambias el diseño (`styles.css`) o el JavaScript (`main.js`)
+### Si cambias un CSS o un JavaScript
 
-Para que la web vaya rápida, los navegadores guardan el CSS y el JavaScript durante 1 día. Si cambias alguno de los dos y quieres que tus visitantes vean el cambio **al momento**:
+Para que la web vaya rápida, los navegadores guardan el CSS y el JavaScript durante 1 día. Si cambias alguno y quieres que tus visitantes vean el cambio **al momento**, sube su número `?v=`:
 
 1. En Visual Studio Code pulsa `Ctrl + Shift + H` (buscar y reemplazar en todos los archivos).
-2. Busca `?v=1` y reemplázalo por `?v=2` (la próxima vez, `?v=3`, y así).
+2. Busca el archivo con su número actual, por ejemplo `inicio.css?v=1`, y reemplázalo por el siguiente: `inicio.css?v=2`. La próxima vez, `?v=3`, y así.
 3. Pulsa **Reemplazar todo**.
+
+Solo tienes que subir el número del archivo que has cambiado. Si cambias `general.css`, aparece en todas las páginas, y el reemplazo las cambia todas de una vez.
 
 Si se te olvida no pasa nada grave: como mucho, alguien que ya visitó la web verá la versión anterior durante un día.
 
@@ -116,7 +127,7 @@ Las imágenes se guardan 7 días en el navegador de quien visita. Para que una i
 
 ## Ten en cuenta
 
-- El menú y el pie están copiados en cada página. Si cambias un enlace, cámbialo en las 9 páginas (las 8 de siempre y `404.html`).
-- En `404.html` todas las direcciones empiezan por `/` (por ejemplo `/servicios.html`). Es a propósito: así funciona aunque alguien entre en una dirección rara como `/blog/algo`.
+- El menú y el pie ya **no** están copiados en cada página: cada página solo tiene `<pw-nav>` y `<pw-footer>`, y `js/componentes.js` los rellena. Por eso necesitan JavaScript para verse (hoy en día lo tienen todos los navegadores).
+- En `404.html` todas las direcciones empiezan por `/` (por ejemplo `/servicios.html`). Es a propósito: así funciona aunque alguien entre en una dirección rara como `/blog/algo`. Por eso sus componentes llevan `raiz="/"`, que hace lo mismo con los enlaces del menú y del pie.
 - Si quien visita la web tiene activada la opción «reducir movimiento» en su ordenador o móvil, las animaciones se desactivan solas.
 - El diseño original sigue en el lienzo de Claude, pero los cambios que hagas aquí no se pasan al lienzo, ni al revés. A partir de ahora, esta carpeta es la versión buena.

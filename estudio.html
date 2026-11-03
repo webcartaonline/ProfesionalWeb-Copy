@@ -10,8 +10,10 @@
 <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=1">
-<script src="js/main.js?v=1" defer></script>
+<script src="js/componentes.js?v=1"></script>
+<link rel="stylesheet" href="css/general.css?v=1">
+<link rel="stylesheet" href="css/estudio.css?v=1">
+<script src="js/general.js?v=1" defer></script>
 </head>
 <body>
 <div class="pw">
@@ -21,31 +23,7 @@
 <div class="cursor-lens" aria-hidden="true"></div>
 <svg class="pw-filters" width="0" height="0" aria-hidden="true" focusable="false"><filter id="pw-lens-48" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-8" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="0.9" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="48" height="48" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter><filter id="pw-lens-88" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feImage href="assets/img/lens-map.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="map"></feImage><feDisplacementMap in="SourceGraphic" in2="map" scale="-14" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap><feGaussianBlur in="disp" stdDeviation="1.2" result="soft"></feGaussianBlur><feImage href="assets/img/lens-rim.png" x="0" y="0" width="88" height="88" preserveAspectRatio="none" result="rim"></feImage><feComposite in="soft" in2="rim" operator="in" result="softrim"></feComposite><feMerge><feMergeNode in="disp"></feMergeNode><feMergeNode in="softrim"></feMergeNode></feMerge></filter></svg>
 
-<div class="nav">
-<div class="nav-in">
-<a class="nav-logo" href="index.html"><svg viewBox="2800 1075 910 325" width="101" height="36" role="img" aria-label="Profesional Web"><g fill="currentColor"><text class="lw-b" x="2808.28" y="1216" font-family="Google Sans, sans-serif" font-weight="700" font-size="165">Profesional</text><text class="lw-r" x="3355.52" y="1382" font-family="Google Sans, sans-serif" font-weight="400" font-size="165">Web</text><path d="M2822 1346.5C2822 1323.58 2840.58 1305 2863.5 1305L3268.5 1305C3291.42 1305 3310 1323.58 3310 1346.5C3310 1369.42 3291.42 1388 3268.5 1388L2863.5 1388C2840.58 1388 2822 1369.42 2822 1346.5Z"></path></g></svg></a>
-<nav aria-label="Principal">
-<ul class="nav-links">
-<li><a href="index.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="estudio.html" aria-current="page">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</nav>
-<a class="btn btn-dark btn-sm nav-cta" href="contacto.html">Escríbenos</a>
-<button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span></button>
-</div>
-<nav class="nav-panel" id="menu-movil" aria-label="Menú" hidden>
-<a href="index.html">Inicio</a>
-<a href="servicios.html">Servicios</a>
-<a href="proyectos.html">Proyectos</a>
-<a href="estudio.html" aria-current="page">Estudio</a>
-<a href="contacto.html">Contacto</a>
-<a class="btn btn-primary" href="contacto.html">Escríbenos</a>
-</nav>
-
-</div>
+<pw-nav pagina="estudio"></pw-nav>
 
 <main id="contenido">
 
@@ -179,42 +157,7 @@
 
 </main>
 
-<footer class="foot">
-<div class="wrap foot-in">
-<div class="foot-brand">
-<strong>Profesional Web</strong>
-<p class="body-sm">Diseño y desarrollo web a medida. Webs rápidas, elegantes y fáciles de usar.</p>
-</div>
-<div>
-<p class="foot-h">Páginas</p>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="estudio.html">Estudio</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Servicios</p>
-<ul>
-<li><a href="servicios.html">Diseño web</a></li>
-<li><a href="servicios.html">Desarrollo a medida</a></li>
-<li><a href="servicios.html">Mantenimiento</a></li>
-</ul>
-</div>
-<div>
-<p class="foot-h">Contacto</p>
-<ul>
-<li><a href="contacto.html">[tu@email.com]</a></li>
-<li><span>[Tu teléfono]</span></li>
-<li><span>[Tu ciudad]</span></li>
-</ul>
-</div>
-</div>
-<div class="wrap foot-bottom"><span>© 2026 Profesional Web</span><nav class="foot-legal" aria-label="Textos legales"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Política de privacidad</a><a href="cookies.html">Política de cookies</a></nav><span>Hecho a mano, línea a línea.</span></div>
-<p class="foot-giant" data-fx="end" aria-hidden="true"><span>Profesional Web</span></p>
-</footer>
+<pw-footer pagina="estudio"></pw-footer>
 </div>
 </body>
 </html>

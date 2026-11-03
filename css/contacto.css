@@ -1,0 +1,80 @@
+/* =========================================================
+   Profesional Web · estilos SOLO de Contacto (contacto.html)
+   Se carga después de general.css.
+   ========================================================= */
+
+/* ---------- Básicos de esta página ---------- */
+.form-error{margin:0;font-size:.875rem;line-height:1.5;color:#b3261e}
+
+.wrap-narrow{width:min(100% - 2 * var(--gutter), var(--narrow));margin-inline:auto}
+
+/* ---------- Contacto ---------- */
+.contact{position:relative;isolation:isolate;overflow:clip;padding:10rem 0 5rem}
+.contact-grid{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:flex-start;gap:3rem 5rem}
+.contact-copy{flex:1 1 380px;display:flex;flex-direction:column;align-items:flex-start;gap:1.5rem}
+.contact-box{flex:1.2 1 440px;min-width:0}
+.clist{list-style:none;margin:.5rem 0 0;padding:0;width:100%;display:flex;flex-direction:column}
+.clist li{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.clist .ico{width:2.75rem;height:2.75rem}
+.clist .ico svg{width:1.25rem;height:1.25rem}
+.clist small{display:block;font-size:.8125rem;color:var(--ink-2)}
+.clist strong{font-weight:500}
+.form{display:flex;flex-direction:column;gap:1rem;padding:clamp(1.5rem,1rem + 2vw,2.5rem);border-radius:var(--r-xl);background:rgb(255 255 255 / .7);border:1px solid var(--line);-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 60px 110px -60px rgb(10 10 10 / .4)}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1rem}
+.field{position:relative}
+.fi{width:100%;min-height:3.5rem;padding:1.4rem 1rem .5rem;border-radius:var(--r-md);border:1px solid var(--line-2);background:#fff;font:400 1rem/1.4 var(--font);color:var(--ink);transition:border-color .2s}
+.fi:hover{border-color:rgb(10 10 10 / .32)}
+.fi:focus{border-color:var(--ink)}
+textarea.fi{min-height:9rem;padding-top:1.75rem;resize:vertical}
+.fl{position:absolute;left:1rem;top:1.05rem;font-size:1rem;color:var(--ink-2);pointer-events:none;transform-origin:0 0;transition:transform .25s var(--ease),color .25s}
+.fi:focus + .fl,.fi:not(:placeholder-shown) + .fl{transform:translateY(-.62rem) scale(.78);color:var(--ink)}
+.types{margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:.75rem}
+.types legend{margin-bottom:.75rem;padding:0;font-size:.9375rem;font-weight:500}
+.types-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.sr{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.sr:checked + .pill{background:var(--ink);border-color:var(--ink);color:#fff}
+.sr:focus-visible + .pill{outline:2px solid var(--orange);outline-offset:3px}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:.5rem}
+.form-foot small{font-size:.8125rem;color:var(--ink-2)}
+.sent{display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem;min-height:30rem;justify-content:center;animation:panelIn .7s var(--ease) backwards}
+.sent-ic{display:grid;place-items:center;width:4.5rem;height:4.5rem;border-radius:50%;background:rgb(21 127 60 / .14);color:var(--green)}
+.sent-ic svg{width:2rem;height:2rem;stroke-dasharray:30;animation:draw .8s var(--ease) .2s backwards}
+@keyframes draw{from{stroke-dashoffset:30}}
+.faq{display:flex;flex-direction:column;gap:.75rem}
+.faq-item{border-radius:var(--r-md);background:#fff;border:1px solid var(--line);transition:border-color .25s,box-shadow .35s}
+.faq-item[data-open="true"]{border-color:var(--line-2);box-shadow:0 24px 50px -34px rgb(10 10 10 / .3)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;min-height:4rem;padding:1rem 1.5rem;border:0;border-radius:var(--r-md);background:none;font:600 1.0625rem/1.4 var(--font);color:var(--ink);text-align:left;cursor:pointer}
+.faq-ic{flex:none;display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:rgb(232 113 10 / .14);color:#a14d04;font-size:1.375rem;font-weight:400;line-height:1;transition:transform .4s var(--ease)}
+.faq-q[aria-expanded="true"] .faq-ic{transform:rotate(45deg)}
+.faq-a{padding:0 1.5rem 1.5rem;font-size:.9375rem;color:var(--ink-2);animation:panelIn .5s var(--ease) backwards}
+
+/* Casilla e información básica de protección de datos */
+.consent{display:flex;align-items:flex-start;gap:.75rem;font-size:.9375rem;line-height:1.5;color:var(--ink);cursor:pointer}
+.consent input{flex:none;width:1.25rem;height:1.25rem;margin:.1rem 0 0;accent-color:var(--ink);cursor:pointer}
+.first-layer{padding:.875rem 1rem;border-radius:var(--r-md);background:var(--bg-soft);font-size:.8125rem;line-height:1.5;color:var(--ink-2)}
+.first-layer-k{margin:0 0 .5rem;font-weight:600;color:var(--ink)}
+.first-layer dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.25rem 1rem}
+.first-layer dt{font-weight:500;color:var(--ink)}
+.first-layer dd{margin:0}
+.first-layer a,.consent a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+
+/* ---------- Móvil ---------- */
+@media (max-width:768px){.contact{padding:8.5rem 0 3.5rem}}
+
+/* Móviles y tablets (pantallas táctiles): mismo diseño, menos trabajo para el procesador.
+   Se quitan los desenfoques que se recalculan al hacer scroll y el efecto "cristal"
+   sobre fondos animados. */
+@media (hover:none){
+  .form{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgb(255 255 255 / .94)}
+}
+
+/* Navegadores sin efecto cristal: fondos más opacos para que todo se lea bien */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .form{background:rgb(255 255 255 / .95)}
+}
+
+/* Navegadores antiguos sin overflow:clip (Safari 15 y anteriores):
+   evita que la página se pueda mover hacia los lados */
+@supports not (overflow:clip){
+  .contact{overflow:hidden}
+}
