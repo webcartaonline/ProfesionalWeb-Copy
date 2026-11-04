@@ -58,6 +58,30 @@ textarea.fi{min-height:9rem;padding-top:1.75rem;resize:vertical}
 .first-layer dd{margin:0}
 .first-layer a,.consent a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
 
+/* ---------- Precinto "Próximamente" ----------
+   Tapa el formulario mientras no funciona. Todo el formulario queda
+   apagado y sin interacción (atributo inert en contacto.html). */
+.contact-box.is-soon{position:relative;isolation:isolate}
+.is-soon .form{opacity:.55;filter:grayscale(.6) blur(1px);pointer-events:none;user-select:none}
+.soon-tape{position:absolute;inset:0;z-index:3;pointer-events:none}
+/* Una sola cinta que rodea la tarjeta: sobresale un poco por los lados
+   y esa parte se ve más oscura, como si se doblara hacia atrás. */
+.tape{position:absolute;top:44%;left:-12px;right:-12px;height:2.5rem;translate:0 -50%;display:flex;align-items:center;overflow:hidden;
+  background:
+    repeating-linear-gradient(-45deg,#0a0a0a 0 8px,transparent 8px 16px) left top / 100% .3rem no-repeat,
+    repeating-linear-gradient(-45deg,#0a0a0a 0 8px,transparent 8px 16px) left bottom / 100% .3rem no-repeat,
+    var(--orange);
+  color:#0a0a0a;box-shadow:0 10px 24px -12px rgb(0 0 0 / .45),inset 0 1px 0 rgb(255 255 255 / .3)}
+.tape::before,.tape::after{content:"";position:absolute;top:0;bottom:0;z-index:2;width:12px}
+.tape::before{left:0;background:linear-gradient(90deg,rgb(0 0 0 / .45),rgb(0 0 0 / .12))}
+.tape::after{right:0;background:linear-gradient(270deg,rgb(0 0 0 / .45),rgb(0 0 0 / .12))}
+.tape span{flex:none;padding-left:1rem;font-size:.875rem;font-weight:800;letter-spacing:.24em;white-space:nowrap;animation:tapeMove 30s linear infinite}
+@keyframes tapeMove{to{transform:translateX(-50%)}}
+/* En el móvil (la misma medida en la que sale el menú del móvil) el formulario
+   tapado no se muestra: solo quedan los datos de contacto. */
+@media (max-width:900px){.contact-box.is-soon{display:none}}
+@media (prefers-reduced-motion:reduce){.tape span{animation:none}}
+
 /* ---------- Móvil ---------- */
 @media (max-width:768px){.contact{padding:8.5rem 0 3.5rem}}
 

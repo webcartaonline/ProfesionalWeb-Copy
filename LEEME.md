@@ -8,15 +8,15 @@ Está optimizada para cargar rápido en cualquier navegador y móvil, y preparad
 | Archivo o carpeta | Qué es |
 | --- | --- |
 | `index.html` | Inicio |
-| `servicios.html`, `proyectos.html`, `estudio.html`, `contacto.html` | El resto de páginas |
+| `servicios.html`, `proyectos.html`, `nosotros.html`, `contacto.html` | El resto de páginas |
 | `aviso-legal.html`, `privacidad.html`, `cookies.html` | Textos legales |
 | `404.html` | La página que ve alguien si entra en una dirección que no existe |
 | `css/general.css` | El diseño que comparten **todas** las páginas: colores, letras, botones, menú, pie, cursor y modo oscuro. |
-| `css/inicio.css`, `css/servicios.css`, `css/proyectos.css`, `css/estudio.css`, `css/contacto.css` | El diseño que **solo** tiene esa página. |
+| `css/inicio.css`, `css/servicios.css`, `css/proyectos.css`, `css/nosotros.css`, `css/contacto.css` | El diseño que **solo** tiene esa página. |
 | `css/legal.css` | El diseño de los tres textos legales (aviso legal, privacidad y cookies). Comparten archivo porque son iguales. |
 | `js/componentes.js` | **El menú de arriba y el pie de página.** Están solo aquí: si cambias algo en este archivo, cambia en todas las páginas a la vez. |
 | `js/general.js` | Lo que se mueve o reacciona en **todas** las páginas: animaciones al hacer scroll, menú del móvil, efectos del ratón y la página que se vuelve negra. |
-| `js/inicio.js`, `js/servicios.js`, `js/proyectos.js`, `js/contacto.js` | Lo que **solo** hace esa página: precio y ventana animada (Inicio), pestañas y línea de tiempo (Servicios), filtros (Proyectos), preguntas frecuentes y formulario (Contacto). Estudio y los textos legales no necesitan uno propio. |
+| `js/inicio.js`, `js/servicios.js`, `js/proyectos.js`, `js/contacto.js` | Lo que **solo** hace esa página: precio y ventana animada (Inicio), pestañas y línea de tiempo (Servicios), filtros (Proyectos), preguntas frecuentes y formulario (Contacto). Nosotros y los textos legales no necesitan uno propio. |
 | `assets/fonts/` | Las fuentes Google Sans y Google Sans Code. Están dentro de tu web, así que no se conecta a Google. |
 | `assets/img/` | Icono, tu foto (en 3 formatos: `.avif`, `.webp` y `.jpg`) y dos imágenes del efecto cristal del círculo que sigue al ratón. |
 | `favicon.ico` | El icono de la pestaña del navegador. |
@@ -47,7 +47,7 @@ Todo lo que tienes que completar está **entre corchetes**. En Visual Studio Cod
 - `[Tu NIF]`, `[Tu dirección completa]`, `[tudominio.es]`: `aviso-legal.html` y `privacidad.html`.
 - `[Proveedor de alojamiento]` (pon **Cloudflare**), `[Proveedor de correo]`, `[Servicio de formularios]`, `[12 meses]`: `privacidad.html`.
 - `[X semanas]`: preguntas frecuentes de `contacto.html`.
-- `[Unas líneas sobre ti…]`: `estudio.html`.
+- `[Unas líneas sobre ti…]`: `nosotros.html`.
 
 ## Activar el formulario de contacto
 
@@ -86,7 +86,7 @@ En un minuto tendrás tu web en una dirección parecida a `profesional-web.tu-cu
 ## Cambios habituales
 
 - **Menú y pie de página:** abre `js/componentes.js`. Arriba del todo, en «TUS DATOS», están los enlaces del menú, el botón, tu email, teléfono, ciudad y la frase del pie. Cambias una vez y se cambia en todas las páginas.
-  - Para **añadir una página al menú**, copia una línea de `MENU` (por ejemplo la de Estudio) y cambia el texto y el archivo. En la página nueva pon `<pw-nav pagina="nombre"></pw-nav>` y `<pw-footer pagina="nombre"></pw-footer>`, donde `nombre` es el `id` que le has dado.
+  - Para **añadir una página al menú**, copia una línea de `MENU` (por ejemplo la de Nosotros) y cambia el texto y el archivo. En la página nueva pon `<pw-nav pagina="nombre"></pw-nav>` y `<pw-footer pagina="nombre"></pw-footer>`, donde `nombre` es el `id` que le has dado.
   - Si cambias `componentes.js`, sube su número `?v=` en las páginas (igual que con el CSS, mira más abajo).
 - **Textos:** abre el `.html` de la página y cambia el texto directamente.
 - **Dónde cambiar el diseño:** si es algo que se ve en todas las páginas (colores, botones, letras…), en `css/general.css`. Si solo sale en una página, en el CSS de esa página (por ejemplo, el bloque del precio está en `css/inicio.css`). Con el JavaScript igual: `js/general.js` o el de la página.
@@ -111,7 +111,7 @@ Si se te olvida no pasa nada grave: como mucho, alguien que ya visitó la web ve
 
 Tu foto está en 3 formatos para que pese poco: `foto-camilo.avif`, `foto-camilo.webp` (y sus versiones pequeñas `-560`) y `foto-camilo.jpg`. Si pones una foto nueva:
 
-- **Lo más fácil:** sustituye `foto-camilo.jpg` por la nueva (con el mismo nombre) y, en `estudio.html`, borra las dos líneas que empiezan por `<source`. Funcionará igual, solo que pesará un poco más.
+- **Lo más fácil:** sustituye `foto-camilo.jpg` por la nueva (con el mismo nombre) y, en `nosotros.html`, borra las dos líneas que empiezan por `<source`. Funcionará igual, solo que pesará un poco más.
 - **Lo mejor:** crea también las versiones `.avif` y `.webp` con la web squoosh.app (gratis, en el navegador) y sustituye las de la carpeta.
 
 Las imágenes se guardan 7 días en el navegador de quien visita. Para que una imagen nueva se vea al momento, ponle un nombre nuevo (por ejemplo `foto-camilo-2.jpg`) y cámbialo también en el HTML.

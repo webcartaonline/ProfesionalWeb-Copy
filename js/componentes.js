@@ -21,8 +21,11 @@
     { id: 'inicio',    texto: 'Inicio',    archivo: 'index.html' },
     { id: 'servicios', texto: 'Servicios', archivo: 'servicios.html' },
     { id: 'proyectos', texto: 'Proyectos', archivo: 'proyectos.html' },
-    { id: 'estudio',   texto: 'Estudio',   archivo: 'estudio.html' }
+    { id: 'nosotros',  texto: 'Nosotros',  archivo: 'nosotros.html' }
   ];
+
+  // Menú del móvil: las mismas páginas y, al final, Contacto
+  var MENU_MOVIL = MENU.concat([{ id: 'contacto', texto: 'Contacto', archivo: 'contacto.html' }]);
 
   // Botón del menú
   var BOTON = { texto: 'Escríbenos', archivo: 'contacto.html' };
@@ -37,15 +40,15 @@
       { texto: 'Inicio',    archivo: 'index.html' },
       { texto: 'Servicios', archivo: 'servicios.html' },
       { texto: 'Proyectos', archivo: 'proyectos.html' },
-      { texto: 'Estudio',   archivo: 'estudio.html' },
+      { texto: 'Nosotros',  archivo: 'nosotros.html' },
       { texto: 'Contacto',  archivo: 'contacto.html' }
     ],
 
     // Columna "Servicios"
+    // (si el enlace empieza por https:// se abre en una pestaña nueva)
     servicios: [
-      { texto: 'Diseño web',          archivo: 'servicios.html' },
-      { texto: 'Desarrollo a medida', archivo: 'servicios.html' },
-      { texto: 'Mantenimiento',       archivo: 'servicios.html' }
+      { texto: 'Diseño web',     archivo: 'servicios.html' },
+      { texto: 'WebCartaOnline', archivo: 'https://webcartaonline.com' }
     ],
 
     // Columna "Contacto"
@@ -72,6 +75,7 @@
   // Dirección de cada enlace. En 404.html se usa raiz="/" para que
   // los enlaces funcionen aunque alguien entre en una dirección rara.
   function url(archivo, raiz) {
+    if (/^https?:\/\//.test(archivo)) return archivo; // enlace a otra web: tal cual
     if (!raiz) return archivo;
     return archivo === 'index.html' ? raiz : raiz + archivo;
   }
@@ -80,12 +84,23 @@
     return id === pagina ? ' aria-current="page"' : '';
   }
 
+  // Nombre de la página en la que estás (para el botón del móvil)
+  function nombreActual(pagina) {
+    var todas = MENU_MOVIL.concat(PIE.legales);
+    for (var i = 0; i < todas.length; i++) {
+      if (todas[i].id === pagina) return todas[i].texto;
+    }
+    return 'Menú';
+  }
+
   function htmlNav(pagina, raiz) {
     var enlaces = MENU.map(function (m) {
       return '<li><a href="' + url(m.archivo, raiz) + '"' + actual(m.id, pagina) + '>' + m.texto + '</a></li>';
     }).join('\n');
-    var enlacesMovil = MENU.map(function (m) {
-      return '<a href="' + url(m.archivo, raiz) + '"' + actual(m.id, pagina) + '>' + m.texto + '</a>';
+    // Enlaces de la ventana del móvil: texto + flecha; entran escalonados (--i)
+    var enlacesMovil = MENU_MOVIL.map(function (m, i) {
+      return '<li style="--i: ' + i + '"><a class="page-menu__link" href="' + url(m.archivo, raiz) + '"' + actual(m.id, pagina) + '>' +
+        '<span>' + m.texto + '</span><span class="page-menu__arrow" aria-hidden="true"></span></a></li>';
     }).join('\n');
     var boton = url(BOTON.archivo, raiz);
 
@@ -94,17 +109,94 @@
       '<a class="nav-logo" href="' + url('index.html', raiz) + '">' + LOGO + '</a>\n' +
       '<nav aria-label="Principal">\n<ul class="nav-links">\n' + enlaces + '\n</ul>\n</nav>\n' +
       '<a class="btn btn-dark btn-sm nav-cta" href="' + boton + '">' + BOTON.texto + '</a>\n' +
-      '<button class="nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil"><span></span><span></span></button>\n' +
+      // Botón del móvil: muestra la página actual y abre la ventana de navegación
+      '<button class="nav-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-movil" aria-haspopup="dialog">' +
+      '<span class="pw-oculto">Página actual: </span><span class="nav-current">' + nombreActual(pagina) + '</span>' +
+      '<span class="pw-oculto">. Abrir menú de páginas</span><span class="nav-chevron" aria-hidden="true"></span></button>\n' +
       '</div>\n' +
-      '<nav class="nav-panel" id="menu-movil" aria-label="Menú" hidden>\n' + enlacesMovil + '\n' +
-      '<a class="btn btn-primary" href="' + boton + '">' + BOTON.texto + '</a>\n' +
+      // Ventana de navegación del móvil (oculta hasta que se abre)
+      '<div class="page-menu" id="menu-movil" data-menu hidden>\n' +
+      '<div class="page-menu__backdrop" data-menu-close></div>\n' +
+      '<nav class="page-menu__panel" aria-label="Navegación móvil">\n' +
+      '<p class="page-menu__eyebrow">Ir a</p>\n' +
+      '<ul class="page-menu__list">\n' + enlacesMovil + '\n</ul>\n' +
       '</nav>\n' +
+      '</div>\n' +
       '</div>';
+  }
+
+  /* Ventana de navegación del móvil (funciona igual que en webcartaonline.com):
+     el botón la abre y la cierra; se cierra también con el velo, con Escape
+     o al elegir una página. Mientras está abierta no se mueve la página de
+     detrás y el foco se queda dentro (botón + enlaces). */
+  function iniciarMenu() {
+    var toggle = document.querySelector('[data-menu-toggle]');
+    var menu = document.querySelector('[data-menu]');
+    if (!toggle || !menu || toggle._pwMenu) return;
+    toggle._pwMenu = true;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var links = Array.prototype.slice.call(menu.querySelectorAll('a'));
+    var timer;
+
+    function abierto() { return toggle.getAttribute('aria-expanded') === 'true'; }
+
+    function abrir() {
+      clearTimeout(timer);
+      menu.hidden = false;
+      void menu.offsetWidth; // fuerza el estado inicial antes de animar
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('pw-locked', 'pw-menu-open');
+      var actualEl = menu.querySelector('[aria-current="page"]') || links[0];
+      if (actualEl) actualEl.focus({ preventScroll: true });
+    }
+
+    function cerrar(devolverFoco) {
+      if (!abierto()) return;
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('pw-locked');
+      timer = setTimeout(function () {
+        menu.hidden = true;
+        document.body.classList.remove('pw-menu-open');
+      }, reduce.matches ? 0 : 380);
+      if (devolverFoco !== false) toggle.focus();
+    }
+
+    toggle.addEventListener('click', function () { if (abierto()) cerrar(); else abrir(); });
+
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('[data-menu-close]')) cerrar();
+      else if (e.target.closest('a')) cerrar(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!abierto()) return;
+      if (e.key === 'Escape') { cerrar(); return; }
+      // El foco da vueltas entre el botón y los enlaces de la ventana
+      if (e.key === 'Tab') {
+        var items = [toggle].concat(links);
+        var i = items.indexOf(document.activeElement);
+        var sig = e.shiftKey ? i - 1 : i + 1;
+        if (sig < 0) sig = items.length - 1;
+        if (sig >= items.length) sig = 0;
+        e.preventDefault();
+        items[sig].focus();
+      }
+    });
+
+    // Al pasar a ordenador la ventana deja de tener sentido
+    var escritorio = window.matchMedia('(min-width: 901px)');
+    var alCambiar = function (e) { if (e.matches) cerrar(false); };
+    if (escritorio.addEventListener) escritorio.addEventListener('change', alCambiar);
+    else escritorio.addListener(alCambiar);
   }
 
   function lista(items, raiz) {
     return '<ul>\n' + items.map(function (i) {
-      return '<li><a href="' + url(i.archivo, raiz) + '">' + i.texto + '</a></li>';
+      var fuera = /^https?:\/\//.test(i.archivo) ? ' target="_blank" rel="noopener"' : '';
+      return '<li><a href="' + url(i.archivo, raiz) + '"' + fuera + '>' + i.texto + '</a></li>';
     }).join('\n') + '\n</ul>';
   }
 
@@ -137,6 +229,7 @@
     var pagina = el.getAttribute('pagina') || '';
     var raiz = el.getAttribute('raiz') || '';
     el.outerHTML = el.localName === 'pw-nav' ? htmlNav(pagina, raiz) : htmlFooter(pagina, raiz);
+    if (el.localName === 'pw-nav') iniciarMenu();
   }
 
   if (window.customElements) {

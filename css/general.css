@@ -130,6 +130,52 @@ a:hover{color:#174ea6}
 .nav-panel a:hover{background:rgb(10 10 10 / .05)}
 .nav-panel .btn{margin-top:.5rem;justify-content:center;font-size:1rem}
 @media (max-width:900px){.nav-links,.nav-cta{display:none}.nav-burger{display:inline-flex}}
+/* ---------- Menú del móvil (igual que en webcartaonline.com) ----------
+   En la barra, un botón muestra la página en la que estás; al pulsarlo cae
+   una ventana de cristal oscuro con las páginas. Lo abre y cierra
+   js/componentes.js (alterna [hidden] y .is-open para animarlo). */
+.pw-oculto{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.nav-in{position:relative;z-index:2}
+.nav-toggle{display:none;flex:1 1 auto;align-items:center;gap:.5rem;min-width:0;max-width:18rem;height:2.625rem;margin-left:auto;padding:0 .4rem 0 .25rem;
+  border:0;border-radius:999px;background:#fff;color:#000;font:700 .9375rem/1 var(--font);cursor:pointer;transition:background-color .15s ease,transform .15s ease}
+.nav-toggle:hover{background:rgb(10 10 10 / .06)}
+.nav-toggle:active{transform:scale(.98)}
+.nav-current{flex:1 1 auto;min-width:0;overflow:hidden;text-align:end;text-overflow:ellipsis;white-space:nowrap}
+.nav-chevron{flex:none;display:grid;place-items:center;width:1.875rem;height:1.875rem;border-radius:999px;background:rgb(10 10 10 / .08)}
+.nav-chevron::before{content:"";width:.42rem;height:.42rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-1.5px) rotate(45deg);transition:transform .25s ease}
+.nav-toggle[aria-expanded="true"] .nav-chevron::before{transform:translateY(1.5px) rotate(225deg)}
+
+.page-menu[hidden]{display:none}
+.page-menu{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;padding:5.5rem var(--gutter) 1.5rem;pointer-events:auto}
+/* Velo: oscurece y difumina lo que queda detrás */
+.page-menu__backdrop{position:absolute;inset:0;background:rgb(10 10 10 / .42);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);opacity:0;transition:opacity 360ms ease}
+.page-menu.is-open .page-menu__backdrop{opacity:1}
+/* Panel de cristal */
+.page-menu__panel{position:relative;display:flex;flex-direction:column;gap:.25rem;width:100%;max-width:28rem;max-height:100%;margin-left:auto;padding:.5rem;overflow-y:auto;
+  border:1px solid rgb(255 255 255 / .14);border-radius:1.25rem;background:rgb(24 24 24 / .6);-webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%);
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / .08),0 2rem 5rem rgb(0 0 0 / .5);transform-origin:top right;opacity:0;transform:translateY(-.75rem) scale(.96);
+  transition:opacity 280ms ease,transform 460ms cubic-bezier(.2,.8,.2,1)}
+.page-menu.is-open .page-menu__panel{opacity:1;transform:none}
+.page-menu__eyebrow{margin:0;padding:.5rem .75rem .25rem;color:rgb(255 255 255 / .45);font-size:.8125rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+/* Enlaces: entran escalonados */
+.page-menu__list{display:flex;flex-direction:column;gap:2px;margin:0;padding:0;list-style:none}
+.page-menu__list>li{opacity:0;transform:translateY(.5rem);transition:opacity 260ms ease,transform 360ms cubic-bezier(.2,.8,.2,1)}
+.page-menu.is-open .page-menu__list>li{opacity:1;transform:none;transition-delay:calc(90ms + var(--i,0) * 40ms)}
+.page-menu__link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.5rem;min-height:3.25rem;padding:.5rem .75rem;border-radius:.875rem;
+  color:rgb(255 255 255 / .82);font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);font-weight:500;text-decoration:none;transition:background-color .15s ease,color .15s ease}
+.page-menu__link:hover{background:rgb(255 255 255 / .07);color:#fff}
+.page-menu__arrow{width:.5rem;height:.5rem;margin-right:.35rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;color:rgb(255 255 255 / .45);transform:rotate(-45deg);transition:transform .25s ease,color .15s ease}
+.page-menu__link:hover .page-menu__arrow{color:#fff;transform:translateX(3px) rotate(-45deg)}
+/* Página actual: fondo blanco (sin punto naranja) */
+.page-menu__link[aria-current="page"]{background:#fff;color:#0a0a0a;font-weight:700}
+.page-menu__link[aria-current="page"] .page-menu__arrow{display:none}
+.page-menu__link[aria-current="page"]:hover{color:#0a0a0a}
+/* Mientras está abierta, la página de detrás no se mueve */
+body.pw-locked{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.page-menu__panel,.page-menu__list>li{transform:none}}
+@media (max-width:900px){.nav-toggle{display:flex}.nav-burger{display:none!important}}
+@media (min-width:901px){.page-menu{display:none}}
+
 
 /* ---------- Orbes de color desenfocados ---------- */
 .orbs{position:absolute;inset:0;z-index:0;pointer-events:none}

@@ -7,7 +7,11 @@
 # Si alguien escribe la dirección sin ".html", la lleva a la página correcta
 /servicios    /servicios.html    301
 /proyectos    /proyectos.html    301
-/estudio      /estudio.html      301
+/nosotros     /nosotros.html     301
+
+# La página "Estudio" ahora se llama "Nosotros": las direcciones antiguas llevan a la nueva
+/estudio       /nosotros.html  301
+/estudio.html  /nosotros.html  301
 /contacto     /contacto.html     301
 /aviso-legal  /aviso-legal.html  301
 /privacidad   /privacidad.html   301

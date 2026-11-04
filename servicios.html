@@ -10,9 +10,10 @@
 <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<script src="js/componentes.js?v=1"></script>
-<link rel="stylesheet" href="css/styles.css?v=6">
+<script src="js/componentes.js?v=3"></script>
+<link rel="stylesheet" href="css/styles.css?v=9">
 <script src="js/main.js?v=2" defer></script>
+<script src="js/webcartaonline.js?v=2" defer></script>
 </head>
 
 <body>
@@ -133,6 +134,66 @@
 <li class="tl-item" data-fx="in" style="--acc: var(--blue)"><span class="dot">4</span><div class="tl-card"><h3>Revisas</h3><p>Pruebas la web con calma y nos dices qué cambiar. Ajustamos cada detalle hasta que te encante.</p><span class="tl-meta">Cambios hasta que te guste</span></div></li>
 <li class="tl-item" data-fx="in" style="--acc: var(--green)"><span class="dot">5</span><div class="tl-card"><h3>Publicamos</h3><p>Tu web sale a internet con tu propio dominio. Y seguimos a tu lado para lo que necesites.</p><span class="tl-meta">Con tu dominio, lista para compartir</span></div></li>
 </ol>
+</div>
+</section>
+
+<section class="sec wco-sec" aria-labelledby="t-wco" data-wco>
+<div class="wrap">
+<div class="wco-head" data-fx="in">
+<div class="wco-head-txt rv">
+<p class="eyebrow">WebCartaOnline</p>
+<h2 class="h2" id="t-wco">Cartas digitales para tu negocio.</h2>
+<p class="lead">Además de webs, tenemos WebCartaOnline: montamos la carta digital de tu negocio y te la entregamos lista para funcionar, sin que tengas que hacer nada.</p>
+</div>
+<a class="btn btn-dark wco-visit rv" style="--d: 1" href="https://webcartaonline.com" target="_blank" rel="noopener">Visitar WebCartaOnline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg></a>
+</div>
+
+<div class="wco-body" data-fx="in">
+<div class="wco-tabs rv" role="tablist" aria-label="Qué incluye WebCartaOnline">
+<button class="wco-tab" type="button" role="tab" id="wco-t0" aria-controls="wco-phone" aria-selected="true" data-wco-tab="0" data-ms="6800">
+<span class="wco-tab-n">01</span><span class="wco-tab-t"><b>Escanean el QR y listo</b><span>Tus clientes ven la carta en su móvil con solo escanear el código de la mesa. Sin descargar nada.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
+<button class="wco-tab" type="button" role="tab" id="wco-t1" aria-controls="wco-phone" aria-selected="false" data-wco-tab="1" data-ms="10400">
+<span class="wco-tab-n">02</span><span class="wco-tab-t"><b>Una carta que da gusto ver</b><span>Plantillas que se adaptan a cafeterías, bares, restaurantes, confiterías, fruterías... Con fotos, etiquetas y filtro de los 14 alérgenos y mucho más.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
+<button class="wco-tab" type="button" role="tab" id="wco-t2" aria-controls="wco-phone" aria-selected="false" data-wco-tab="2" data-ms="8800">
+<span class="wco-tab-n">03</span><span class="wco-tab-t"><b>Cámbiala tú mismo</b><span>Con el editor adminApp cambias precios, platos y fotos desde cualquier dispositivo, ves cómo queda y publicas al momento.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
+<button class="wco-tab" type="button" role="tab" id="wco-t3" aria-controls="wco-phone" aria-selected="false" data-wco-tab="3" data-ms="5800">
+<span class="wco-tab-n">04</span><span class="wco-tab-t"><b>En varios idiomas</b><span>Tu carta en otros idiomas para que cualquier cliente la entienda y pida con confianza.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
+</div>
+
+<div class="wco-stage rv" style="--d: 1">
+<div class="wco-glow" aria-hidden="true"></div>
+<div class="wco-phone" id="wco-phone" role="tabpanel" aria-live="polite" data-step="0">
+<p class="pw-oculto" data-wco-say>Escanean el QR y listo.</p>
+<div class="wco-notch" aria-hidden="true"></div>
+
+<!-- 1. QR en la mesa y, al escanearlo, se abre la carta real -->
+<div class="wco-screen wco-s-qr" aria-hidden="true">
+<div class="wco-tent">
+<p class="wco-tent-k">Mesa 4</p>
+<div class="wco-qr"><svg class="wco-qr-svg" viewBox="-1 -1 23 23" aria-hidden="true"><rect x="-1" y="-1" width="23" height="23" fill="#fff"/><g fill="#0a0a0a"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="5" y="0" width="1" height="1"/><rect x="6" y="0" width="1" height="1"/><rect x="8" y="0" width="1" height="1"/><rect x="9" y="0" width="1" height="1"/><rect x="11" y="0" width="1" height="1"/><rect x="14" y="0" width="1" height="1"/><rect x="15" y="0" width="1" height="1"/><rect x="16" y="0" width="1" height="1"/><rect x="17" y="0" width="1" height="1"/><rect x="18" y="0" width="1" height="1"/><rect x="19" y="0" width="1" height="1"/><rect x="20" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="8" y="1" width="1" height="1"/><rect x="9" y="1" width="1" height="1"/><rect x="11" y="1" width="1" height="1"/><rect x="12" y="1" width="1" height="1"/><rect x="14" y="1" width="1" height="1"/><rect x="20" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="8" y="2" width="1" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="12" y="2" width="1" height="1"/><rect x="14" y="2" width="1" height="1"/><rect x="16" y="2" width="1" height="1"/><rect x="17" y="2" width="1" height="1"/><rect x="18" y="2" width="1" height="1"/><rect x="20" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="6" y="3" width="1" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="12" y="3" width="1" height="1"/><rect x="14" y="3" width="1" height="1"/><rect x="16" y="3" width="1" height="1"/><rect x="17" y="3" width="1" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="20" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="11" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="14" y="4" width="1" height="1"/><rect x="16" y="4" width="1" height="1"/><rect x="17" y="4" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="20" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/><rect x="11" y="5" width="1" height="1"/><rect x="14" y="5" width="1" height="1"/><rect x="20" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="1" y="6" width="1" height="1"/><rect x="2" y="6" width="1" height="1"/><rect x="3" y="6" width="1" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="15" y="6" width="1" height="1"/><rect x="16" y="6" width="1" height="1"/><rect x="17" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/><rect x="19" y="6" width="1" height="1"/><rect x="20" y="6" width="1" height="1"/><rect x="9" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="12" y="7" width="1" height="1"/><rect x="0" y="8" width="1" height="1"/><rect x="2" y="8" width="1" height="1"/><rect x="3" y="8" width="1" height="1"/><rect x="5" y="8" width="1" height="1"/><rect x="6" y="8" width="1" height="1"/><rect x="7" y="8" width="1" height="1"/><rect x="10" y="8" width="1" height="1"/><rect x="15" y="8" width="1" height="1"/><rect x="17" y="8" width="1" height="1"/><rect x="18" y="8" width="1" height="1"/><rect x="20" y="8" width="1" height="1"/><rect x="1" y="9" width="1" height="1"/><rect x="7" y="9" width="1" height="1"/><rect x="11" y="9" width="1" height="1"/><rect x="14" y="9" width="1" height="1"/><rect x="16" y="9" width="1" height="1"/><rect x="0" y="10" width="1" height="1"/><rect x="1" y="10" width="1" height="1"/><rect x="3" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="5" y="10" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/><rect x="7" y="10" width="1" height="1"/><rect x="8" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/><rect x="11" y="10" width="1" height="1"/><rect x="12" y="10" width="1" height="1"/><rect x="14" y="10" width="1" height="1"/><rect x="15" y="10" width="1" height="1"/><rect x="20" y="10" width="1" height="1"/><rect x="0" y="11" width="1" height="1"/><rect x="1" y="11" width="1" height="1"/><rect x="4" y="11" width="1" height="1"/><rect x="5" y="11" width="1" height="1"/><rect x="7" y="11" width="1" height="1"/><rect x="8" y="11" width="1" height="1"/><rect x="11" y="11" width="1" height="1"/><rect x="12" y="11" width="1" height="1"/><rect x="13" y="11" width="1" height="1"/><rect x="14" y="11" width="1" height="1"/><rect x="0" y="12" width="1" height="1"/><rect x="5" y="12" width="1" height="1"/><rect x="6" y="12" width="1" height="1"/><rect x="7" y="12" width="1" height="1"/><rect x="8" y="12" width="1" height="1"/><rect x="10" y="12" width="1" height="1"/><rect x="11" y="12" width="1" height="1"/><rect x="12" y="12" width="1" height="1"/><rect x="13" y="12" width="1" height="1"/><rect x="14" y="12" width="1" height="1"/><rect x="15" y="12" width="1" height="1"/><rect x="16" y="12" width="1" height="1"/><rect x="17" y="12" width="1" height="1"/><rect x="18" y="12" width="1" height="1"/><rect x="19" y="12" width="1" height="1"/><rect x="20" y="12" width="1" height="1"/><rect x="10" y="13" width="1" height="1"/><rect x="11" y="13" width="1" height="1"/><rect x="12" y="13" width="1" height="1"/><rect x="13" y="13" width="1" height="1"/><rect x="14" y="13" width="1" height="1"/><rect x="17" y="13" width="1" height="1"/><rect x="19" y="13" width="1" height="1"/><rect x="20" y="13" width="1" height="1"/><rect x="0" y="14" width="1" height="1"/><rect x="1" y="14" width="1" height="1"/><rect x="2" y="14" width="1" height="1"/><rect x="3" y="14" width="1" height="1"/><rect x="4" y="14" width="1" height="1"/><rect x="5" y="14" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/><rect x="8" y="14" width="1" height="1"/><rect x="9" y="14" width="1" height="1"/><rect x="11" y="14" width="1" height="1"/><rect x="12" y="14" width="1" height="1"/><rect x="15" y="14" width="1" height="1"/><rect x="17" y="14" width="1" height="1"/><rect x="0" y="15" width="1" height="1"/><rect x="6" y="15" width="1" height="1"/><rect x="9" y="15" width="1" height="1"/><rect x="10" y="15" width="1" height="1"/><rect x="11" y="15" width="1" height="1"/><rect x="15" y="15" width="1" height="1"/><rect x="16" y="15" width="1" height="1"/><rect x="0" y="16" width="1" height="1"/><rect x="2" y="16" width="1" height="1"/><rect x="3" y="16" width="1" height="1"/><rect x="4" y="16" width="1" height="1"/><rect x="6" y="16" width="1" height="1"/><rect x="10" y="16" width="1" height="1"/><rect x="12" y="16" width="1" height="1"/><rect x="13" y="16" width="1" height="1"/><rect x="14" y="16" width="1" height="1"/><rect x="15" y="16" width="1" height="1"/><rect x="16" y="16" width="1" height="1"/><rect x="19" y="16" width="1" height="1"/><rect x="0" y="17" width="1" height="1"/><rect x="2" y="17" width="1" height="1"/><rect x="3" y="17" width="1" height="1"/><rect x="4" y="17" width="1" height="1"/><rect x="6" y="17" width="1" height="1"/><rect x="10" y="17" width="1" height="1"/><rect x="11" y="17" width="1" height="1"/><rect x="12" y="17" width="1" height="1"/><rect x="13" y="17" width="1" height="1"/><rect x="14" y="17" width="1" height="1"/><rect x="18" y="17" width="1" height="1"/><rect x="0" y="18" width="1" height="1"/><rect x="2" y="18" width="1" height="1"/><rect x="3" y="18" width="1" height="1"/><rect x="4" y="18" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/><rect x="8" y="18" width="1" height="1"/><rect x="13" y="18" width="1" height="1"/><rect x="14" y="18" width="1" height="1"/><rect x="16" y="18" width="1" height="1"/><rect x="19" y="18" width="1" height="1"/><rect x="20" y="18" width="1" height="1"/><rect x="0" y="19" width="1" height="1"/><rect x="6" y="19" width="1" height="1"/><rect x="10" y="19" width="1" height="1"/><rect x="11" y="19" width="1" height="1"/><rect x="12" y="19" width="1" height="1"/><rect x="15" y="19" width="1" height="1"/><rect x="19" y="19" width="1" height="1"/><rect x="0" y="20" width="1" height="1"/><rect x="1" y="20" width="1" height="1"/><rect x="2" y="20" width="1" height="1"/><rect x="3" y="20" width="1" height="1"/><rect x="4" y="20" width="1" height="1"/><rect x="5" y="20" width="1" height="1"/><rect x="6" y="20" width="1" height="1"/><rect x="8" y="20" width="1" height="1"/><rect x="9" y="20" width="1" height="1"/><rect x="14" y="20" width="1" height="1"/><rect x="17" y="20" width="1" height="1"/><rect x="18" y="20" width="1" height="1"/><rect x="19" y="20" width="1" height="1"/><rect x="20" y="20" width="1" height="1"/></g></svg><i class="wco-scan"></i></div>
+<p class="wco-tent-t">Escanea y mira<br>nuestra carta</p>
+</div>
+<p class="wco-hint">Con la cámara del móvil · sin apps</p>
+<video class="wco-vid wco-vid-late" src="assets/video/wco-abrir.mp4" poster="assets/video/wco-abrir.jpg" muted playsinline preload="none"></video>
+</div>
+
+<!-- 2. Carta real (plantilla de prueba) -->
+<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-carta.mp4" poster="assets/video/wco-carta.jpg" muted playsinline preload="none"></video></div>
+<!-- 3. Editor real adminApp -->
+<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-editor.mp4" poster="assets/video/wco-editor.jpg" muted playsinline preload="none"></video></div>
+<!-- 4. Cambio de idioma en la carta real -->
+<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-idioma.mp4" poster="assets/video/wco-idioma.jpg" muted playsinline preload="none"></video></div>
+</div>
+</div>
+</div>
+
+<ul class="wco-facts" data-fx="in">
+<li class="rv" style="--d: 0"><b>5 días</b><span>hábiles como mucho para enseñarte tu carta</span></li>
+<li class="rv" style="--d: 1"><b>14</b><span>alérgenos con filtro para el cliente</span></li>
+<li class="rv" style="--d: 2"><b>Desde 200 €</b><span>pago de entrada, una sola vez</span></li>
+<li class="rv" style="--d: 3"><b>Desde 1 €</b><span>al mes de mantenimiento</span></li>
+</ul>
+<p class="wco-note">Precios de WebCartaOnline sin IVA. Toda la información en <a href="https://webcartaonline.com" target="_blank" rel="noopener">webcartaonline.com</a>.</p>
 </div>
 </section>
 
