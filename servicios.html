@@ -11,9 +11,9 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script src="js/componentes.js?v=3"></script>
-<link rel="stylesheet" href="css/styles.css?v=9">
+<link rel="stylesheet" href="css/styles.css?v=12">
 <script src="js/main.js?v=2" defer></script>
-<script src="js/webcartaonline.js?v=2" defer></script>
+<script src="js/webcartaonline.js?v=3" defer></script>
 </head>
 
 <body>
@@ -150,13 +150,13 @@
 
 <div class="wco-body" data-fx="in">
 <div class="wco-tabs rv" role="tablist" aria-label="Qué incluye WebCartaOnline">
-<button class="wco-tab" type="button" role="tab" id="wco-t0" aria-controls="wco-phone" aria-selected="true" data-wco-tab="0" data-ms="6800">
+<button class="wco-tab" type="button" role="tab" id="wco-t0" aria-controls="wco-phone" aria-selected="true" data-wco-tab="0" data-ms="5000">
 <span class="wco-tab-n">01</span><span class="wco-tab-t"><b>Escanean el QR y listo</b><span>Tus clientes ven la carta en su móvil con solo escanear el código de la mesa. Sin descargar nada.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
-<button class="wco-tab" type="button" role="tab" id="wco-t1" aria-controls="wco-phone" aria-selected="false" data-wco-tab="1" data-ms="10400">
+<button class="wco-tab" type="button" role="tab" id="wco-t1" aria-controls="wco-phone" aria-selected="false" data-wco-tab="1" data-ms="12600">
 <span class="wco-tab-n">02</span><span class="wco-tab-t"><b>Una carta que da gusto ver</b><span>Plantillas que se adaptan a cafeterías, bares, restaurantes, confiterías, fruterías... Con fotos, etiquetas y filtro de los 14 alérgenos y mucho más.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
-<button class="wco-tab" type="button" role="tab" id="wco-t2" aria-controls="wco-phone" aria-selected="false" data-wco-tab="2" data-ms="8800">
+<button class="wco-tab" type="button" role="tab" id="wco-t2" aria-controls="wco-phone" aria-selected="false" data-wco-tab="2" data-ms="13000">
 <span class="wco-tab-n">03</span><span class="wco-tab-t"><b>Cámbiala tú mismo</b><span>Con el editor adminApp cambias precios, platos y fotos desde cualquier dispositivo, ves cómo queda y publicas al momento.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
-<button class="wco-tab" type="button" role="tab" id="wco-t3" aria-controls="wco-phone" aria-selected="false" data-wco-tab="3" data-ms="5800">
+<button class="wco-tab" type="button" role="tab" id="wco-t3" aria-controls="wco-phone" aria-selected="false" data-wco-tab="3" data-ms="7000">
 <span class="wco-tab-n">04</span><span class="wco-tab-t"><b>En varios idiomas</b><span>Tu carta en otros idiomas para que cualquier cliente la entienda y pida con confianza.</span></span><i class="wco-tab-bar" aria-hidden="true"></i></button>
 </div>
 
@@ -166,7 +166,7 @@
 <p class="pw-oculto" data-wco-say>Escanean el QR y listo.</p>
 <div class="wco-notch" aria-hidden="true"></div>
 
-<!-- 1. QR en la mesa y, al escanearlo, se abre la carta real -->
+<!-- 1. QR en la mesa (solo la animación del escaneo) -->
 <div class="wco-screen wco-s-qr" aria-hidden="true">
 <div class="wco-tent">
 <p class="wco-tent-k">Mesa 4</p>
@@ -174,15 +174,29 @@
 <p class="wco-tent-t">Escanea y mira<br>nuestra carta</p>
 </div>
 <p class="wco-hint">Con la cámara del móvil · sin apps</p>
-<video class="wco-vid wco-vid-late" src="assets/video/wco-abrir.mp4" poster="assets/video/wco-abrir.jpg" muted playsinline preload="none"></video>
 </div>
 
-<!-- 2. Carta real (plantilla de prueba) -->
-<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-carta.mp4" poster="assets/video/wco-carta.jpg" muted playsinline preload="none"></video></div>
+<!-- 2. Las plantillas reales: una foto de cada una que se va deslizando -->
+<div class="wco-screen wco-s-tpl" aria-hidden="true">
+<div class="wco-slides" data-wco-slides>
+<img class="is-on" src="assets/img/plantillas/plantilla-1.webp" alt="" width="585" height="1200" loading="lazy" decoding="async">
+<img src="assets/img/plantillas/plantilla-2.webp" alt="" width="585" height="1200" loading="lazy" decoding="async">
+<img src="assets/img/plantillas/plantilla-3.webp" alt="" width="585" height="1200" loading="lazy" decoding="async">
+<img src="assets/img/plantillas/plantilla-4.webp" alt="" width="585" height="1200" loading="lazy" decoding="async">
+</div>
+<div class="wco-slides-dots"><i class="is-on"></i><i></i><i></i><i></i></div>
+</div>
 <!-- 3. Editor real adminApp -->
-<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-editor.mp4" poster="assets/video/wco-editor.jpg" muted playsinline preload="none"></video></div>
-<!-- 4. Cambio de idioma en la carta real -->
-<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-idioma.mp4" poster="assets/video/wco-idioma.jpg" muted playsinline preload="none"></video></div>
+<div class="wco-screen" aria-hidden="true"><video class="wco-vid" src="assets/video/wco-editor.mp4?v=2" poster="assets/video/wco-editor.jpg?v=2" muted playsinline preload="none"></video></div>
+<!-- 4. Idiomas: lista de idiomas con su bandera que baja en bucle -->
+<div class="wco-screen wco-s-idiomas" aria-hidden="true">
+<p class="wco-id-k">Tu carta, en el idioma<br>de cada cliente</p>
+<div class="wco-id-win">
+<i class="wco-id-band" aria-hidden="true"></i>
+<ul class="wco-id-list"><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#c60b1e"/><rect y="9" width="36" height="18" fill="#ffc400"/></svg><span class="wco-ln"><b>Español</b><small>Castellano</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#de2910"/><polygon points="10.00,6.50 11.23,10.30 15.23,10.30 12.00,12.65 13.23,16.45 10.00,14.10 6.77,16.45 8.00,12.65 4.77,10.30 8.77,10.30" fill="#ffde00"/><polygon points="18.90,4.44 18.63,5.72 19.76,6.37 18.46,6.51 18.19,7.79 17.66,6.60 16.36,6.73 17.33,5.86 16.80,4.66 17.93,5.32" fill="#ffde00"/><polygon points="21.97,8.26 22.03,9.57 23.30,9.91 22.08,10.37 22.15,11.68 21.32,10.66 20.10,11.13 20.81,10.04 19.99,9.02 21.25,9.36" fill="#ffde00"/><polygon points="21.50,13.20 21.90,14.44 23.21,14.44 22.15,15.21 22.56,16.46 21.50,15.69 20.44,16.46 20.85,15.21 19.79,14.44 21.10,14.44" fill="#ffde00"/><polygon points="17.53,17.26 18.25,18.36 19.51,18.02 18.69,19.04 19.40,20.13 18.18,19.66 17.35,20.68 17.42,19.37 16.20,18.91 17.47,18.57" fill="#ffde00"/></svg><span class="wco-ln"><b>中文</b><small>Chino</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#006aa7"/><rect x="10" width="6" height="36" fill="#fecc00"/><rect y="15" width="36" height="6" fill="#fecc00"/></svg><span class="wco-ln"><b>Svenska</b><small>Sueco</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><path d="M0 0L36 36" stroke="#0099cc" stroke-width="9"/></svg><span class="wco-ln"><b>Galego</b><small>Gallego</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#d52b1e"/><path d="M0 0L36 36M36 0L0 36" stroke="#009b48" stroke-width="5"/><path d="M18 0V36M0 18H36" stroke="#fff" stroke-width="4.5"/></svg><span class="wco-ln"><b>Euskara</b><small>Euskera</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fcdd09"/><rect y="4" width="36" height="4" fill="#da121a"/><rect y="12" width="36" height="4" fill="#da121a"/><rect y="20" width="36" height="4" fill="#da121a"/><rect y="28" width="36" height="4" fill="#da121a"/></svg><span class="wco-ln"><b>Català</b><small>Catalán</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="12" fill="#ae1c28"/><rect y="12" width="36" height="12" fill="#fff"/><rect y="24" width="36" height="12" fill="#21468b"/></svg><span class="wco-ln"><b>Nederlands</b><small>Neerlandés</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#ff0000"/><rect width="14" height="36" fill="#006600"/><circle cx="14" cy="18" r="6.5" fill="#ffcc00"/><circle cx="14" cy="18" r="3.6" fill="#fff" stroke="#ff0000" stroke-width="1.6"/></svg><span class="wco-ln"><b>Português</b><small>Portugués</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><rect width="12" height="36" fill="#009246"/><rect x="24" width="12" height="36" fill="#ce2b37"/></svg><span class="wco-ln"><b>Italiano</b><small>Italiano</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="12" fill="#000"/><rect y="12" width="36" height="12" fill="#dd0000"/><rect y="24" width="36" height="12" fill="#ffce00"/></svg><span class="wco-ln"><b>Deutsch</b><small>Alemán</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><rect width="12" height="36" fill="#0055a4"/><rect x="24" width="12" height="36" fill="#ef4135"/></svg><span class="wco-ln"><b>Français</b><small>Francés</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#012169"/><path d="M0 0L36 36M36 0L0 36" stroke="#fff" stroke-width="7"/><path d="M0 0L36 36M36 0L0 36" stroke="#c8102e" stroke-width="2.5"/><path d="M18 0V36M0 18H36" stroke="#fff" stroke-width="10"/><path d="M18 0V36M0 18H36" stroke="#c8102e" stroke-width="6"/></svg><span class="wco-ln"><b>English</b><small>Inglés</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#c60b1e"/><rect y="9" width="36" height="18" fill="#ffc400"/></svg><span class="wco-ln"><b>Español</b><small>Castellano</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#de2910"/><polygon points="10.00,6.50 11.23,10.30 15.23,10.30 12.00,12.65 13.23,16.45 10.00,14.10 6.77,16.45 8.00,12.65 4.77,10.30 8.77,10.30" fill="#ffde00"/><polygon points="18.90,4.44 18.63,5.72 19.76,6.37 18.46,6.51 18.19,7.79 17.66,6.60 16.36,6.73 17.33,5.86 16.80,4.66 17.93,5.32" fill="#ffde00"/><polygon points="21.97,8.26 22.03,9.57 23.30,9.91 22.08,10.37 22.15,11.68 21.32,10.66 20.10,11.13 20.81,10.04 19.99,9.02 21.25,9.36" fill="#ffde00"/><polygon points="21.50,13.20 21.90,14.44 23.21,14.44 22.15,15.21 22.56,16.46 21.50,15.69 20.44,16.46 20.85,15.21 19.79,14.44 21.10,14.44" fill="#ffde00"/><polygon points="17.53,17.26 18.25,18.36 19.51,18.02 18.69,19.04 19.40,20.13 18.18,19.66 17.35,20.68 17.42,19.37 16.20,18.91 17.47,18.57" fill="#ffde00"/></svg><span class="wco-ln"><b>中文</b><small>Chino</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#006aa7"/><rect x="10" width="6" height="36" fill="#fecc00"/><rect y="15" width="36" height="6" fill="#fecc00"/></svg><span class="wco-ln"><b>Svenska</b><small>Sueco</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><path d="M0 0L36 36" stroke="#0099cc" stroke-width="9"/></svg><span class="wco-ln"><b>Galego</b><small>Gallego</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#d52b1e"/><path d="M0 0L36 36M36 0L0 36" stroke="#009b48" stroke-width="5"/><path d="M18 0V36M0 18H36" stroke="#fff" stroke-width="4.5"/></svg><span class="wco-ln"><b>Euskara</b><small>Euskera</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fcdd09"/><rect y="4" width="36" height="4" fill="#da121a"/><rect y="12" width="36" height="4" fill="#da121a"/><rect y="20" width="36" height="4" fill="#da121a"/><rect y="28" width="36" height="4" fill="#da121a"/></svg><span class="wco-ln"><b>Català</b><small>Catalán</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="12" fill="#ae1c28"/><rect y="12" width="36" height="12" fill="#fff"/><rect y="24" width="36" height="12" fill="#21468b"/></svg><span class="wco-ln"><b>Nederlands</b><small>Neerlandés</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#ff0000"/><rect width="14" height="36" fill="#006600"/><circle cx="14" cy="18" r="6.5" fill="#ffcc00"/><circle cx="14" cy="18" r="3.6" fill="#fff" stroke="#ff0000" stroke-width="1.6"/></svg><span class="wco-ln"><b>Português</b><small>Portugués</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><rect width="12" height="36" fill="#009246"/><rect x="24" width="12" height="36" fill="#ce2b37"/></svg><span class="wco-ln"><b>Italiano</b><small>Italiano</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="12" fill="#000"/><rect y="12" width="36" height="12" fill="#dd0000"/><rect y="24" width="36" height="12" fill="#ffce00"/></svg><span class="wco-ln"><b>Deutsch</b><small>Alemán</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#fff"/><rect width="12" height="36" fill="#0055a4"/><rect x="24" width="12" height="36" fill="#ef4135"/></svg><span class="wco-ln"><b>Français</b><small>Francés</small></span></li><li><svg class="wco-flag" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" fill="#012169"/><path d="M0 0L36 36M36 0L0 36" stroke="#fff" stroke-width="7"/><path d="M0 0L36 36M36 0L0 36" stroke="#c8102e" stroke-width="2.5"/><path d="M18 0V36M0 18H36" stroke="#fff" stroke-width="10"/><path d="M18 0V36M0 18H36" stroke="#c8102e" stroke-width="6"/></svg><span class="wco-ln"><b>English</b><small>Inglés</small></span></li></ul>
+</div>
+</div>
+
 </div>
 </div>
 </div>

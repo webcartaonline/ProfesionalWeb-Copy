@@ -782,6 +782,34 @@ textarea.fi{min-height:9rem;padding-top:1.75rem;resize:vertical}
 .wco-vid-late{opacity:0;transition:opacity .6s ease}
 .wco-vid-late.is-on{opacity:1}
 
+/* Idiomas: lista con banderas que baja despacio en bucle.
+   Solo se mueve mientras se ve esta pantalla. */
+.wco-s-idiomas{display:flex;flex-direction:column;padding:3rem 0 0;background:linear-gradient(180deg,#fbf8f2,#f3ede3)}
+.wco-id-k{padding:0 1.25rem;font-size:1.0625rem;font-weight:700;line-height:1.2;letter-spacing:-.02em;text-align:center}
+.wco-id-win{position:relative;flex:1;margin-top:1rem;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+.wco-id-band{position:absolute;z-index:0;left:.75rem;right:.75rem;top:50%;height:3.4rem;translate:0 -50%;border-radius:1rem;background:#fff;box-shadow:0 10px 26px -12px rgb(10 10 10 / .28),0 0 0 1px rgb(10 10 10 / .05)}
+.wco-id-list{--row:3.4rem;position:absolute;z-index:1;left:0;right:0;top:50%;list-style:none;margin:-1.7rem 0 0;padding:0;animation:wcoIdiomas 26.4s cubic-bezier(.65,0,.35,1) infinite;animation-play-state:paused}
+.wco-screen.is-on .wco-id-list{animation-play-state:running}
+.wco-id-list li{display:flex;align-items:center;gap:.8rem;height:3.4rem;padding:0 1.5rem}
+.wco-flag{flex:none;width:1.9rem;height:1.9rem;border-radius:50%;box-shadow:0 0 0 1.5px #fff,0 2px 6px rgb(10 10 10 / .25)}
+.wco-ln b{display:block;font-size:.9375rem;font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.wco-ln small{display:block;font-size:.6875rem;color:rgb(10 10 10 / .5)}
+/* Picker: la lista (repetida dos veces) baja un idioma cada 2,2 s y se para
+   con el idioma centrado en la banda blanca; al final vuelve al principio sin que se note */
+@keyframes wcoIdiomas{0%{transform:translateY(calc(var(--row) * -12))}5.667%{transform:translateY(calc(var(--row) * -12))}8.333%{transform:translateY(calc(var(--row) * -11))}14.000%{transform:translateY(calc(var(--row) * -11))}16.667%{transform:translateY(calc(var(--row) * -10))}22.333%{transform:translateY(calc(var(--row) * -10))}25.000%{transform:translateY(calc(var(--row) * -9))}30.667%{transform:translateY(calc(var(--row) * -9))}33.333%{transform:translateY(calc(var(--row) * -8))}39.000%{transform:translateY(calc(var(--row) * -8))}41.667%{transform:translateY(calc(var(--row) * -7))}47.333%{transform:translateY(calc(var(--row) * -7))}50.000%{transform:translateY(calc(var(--row) * -6))}55.667%{transform:translateY(calc(var(--row) * -6))}58.333%{transform:translateY(calc(var(--row) * -5))}64.000%{transform:translateY(calc(var(--row) * -5))}66.667%{transform:translateY(calc(var(--row) * -4))}72.333%{transform:translateY(calc(var(--row) * -4))}75.000%{transform:translateY(calc(var(--row) * -3))}80.667%{transform:translateY(calc(var(--row) * -3))}83.333%{transform:translateY(calc(var(--row) * -2))}89.000%{transform:translateY(calc(var(--row) * -2))}91.667%{transform:translateY(calc(var(--row) * -1))}97.333%{transform:translateY(calc(var(--row) * -1))}100.000%{transform:translateY(calc(var(--row) * 0))}}
+
+/* Pase de las plantillas reales: cada 3 s la foto sale por la izquierda
+   y entra la siguiente por la derecha (lo mueve js/webcartaonline.js) */
+.wco-slides{position:absolute;inset:0;overflow:hidden;background:#0a0a0a}
+.wco-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transform:translateX(100%);transition:transform .9s cubic-bezier(.77,0,.18,1)}
+.wco-slides img.is-on{transform:none}
+.wco-slides img.is-out{transform:translateX(-100%)}
+.wco-slides img.no-tr{transition:none}
+.wco-slides-dots{position:absolute;z-index:2;left:50%;bottom:.9rem;display:flex;gap:.35rem;padding:.4rem .55rem;translate:-50% 0;border-radius:99px;background:rgb(10 10 10 / .55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.wco-slides-dots i{width:.4rem;height:.4rem;border-radius:99px;background:rgb(255 255 255 / .45);transition:width .4s var(--ease),background-color .4s}
+.wco-slides-dots i.is-on{width:1.1rem;background:#fff}
+
 /* Datos */
 .wco-facts{list-style:none;margin:clamp(3rem,6vw,4.5rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:1rem}
 .wco-facts li{display:flex;flex-direction:column;gap:.35rem;padding:1.4rem 1.5rem;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg)}

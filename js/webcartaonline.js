@@ -20,6 +20,40 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var cur = 0, timer = 0, late = 0, visible = false, manual = reduce, hover = false;
 
+  /* Pase de plantillas: una foto fija de cada plantilla real; cada 3 s
+     la actual sale por la izquierda y entra la siguiente, en bucle. */
+  var CADA = 3000, slideTimer = 0, slide = 0;
+  function pase() {
+    var box = screens[cur] && screens[cur].querySelector('[data-wco-slides]');
+    return box ? { imgs: box.querySelectorAll('img'), dots: screens[cur].querySelectorAll('.wco-slides-dots i') } : null;
+  }
+  function pararPase() { clearTimeout(slideTimer); }
+  function irA(i) {
+    var p = pase(); if (!p) return;
+    var n = p.imgs.length, sig = (i + n) % n, act = p.imgs[slide], nueva = p.imgs[sig];
+    if (sig === slide) return;
+    // La nueva espera a la derecha sin animación y luego entran las dos a la vez
+    nueva.classList.add('no-tr'); nueva.classList.remove('is-out', 'is-on'); void nueva.offsetWidth; nueva.classList.remove('no-tr');
+    act.classList.remove('is-on'); act.classList.add('is-out');
+    nueva.classList.add('is-on');
+    Array.prototype.forEach.call(p.dots, function (d, k) { d.classList.toggle('is-on', k === sig); });
+    slide = sig;
+  }
+  function empezarPase() {
+    pararPase();
+    var p = pase(); if (!p) return;
+    // Siempre empieza por la primera plantilla
+    Array.prototype.forEach.call(p.imgs, function (im, k) {
+      im.loading = 'eager';
+      im.classList.add('no-tr'); im.classList.remove('is-on', 'is-out'); if (k === 0) im.classList.add('is-on');
+      void im.offsetWidth; im.classList.remove('no-tr');
+    });
+    Array.prototype.forEach.call(p.dots, function (d, k) { d.classList.toggle('is-on', k === 0); });
+    slide = 0;
+    if (reduce || !visible) return;
+    (function siguiente() { slideTimer = setTimeout(function () { irA(slide + 1); siguiente(); }, CADA); })();
+  }
+
   function ms(i) { return parseInt(tabs[i].getAttribute('data-ms'), 10) || 6000; }
 
   function cargar(i) {
@@ -69,6 +103,9 @@
     } else {
       reproducir(v);
     }
+    // Pase de plantillas (solo en la pantalla que lo tiene)
+    pararPase();
+    if (screens[cur] && screens[cur].querySelector('[data-wco-slides]')) empezarPase();
   }
 
   function loop() {
@@ -101,7 +138,7 @@
       visible = en[0].isIntersecting;
       // Al entrar en pantalla empieza desde la pestaña actual; al salir, se para el vídeo
       if (visible && !antes) show(cur);
-      if (!visible) parar();
+      if (!visible) { parar(); pararPase(); }
       loop();
     }, { threshold: 0.35 }).observe(body || sec);
   } else { visible = true; }
