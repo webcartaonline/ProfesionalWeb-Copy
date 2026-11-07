@@ -109,12 +109,12 @@ Si se te olvida no pasa nada grave: como mucho, alguien que ya visitó la web ve
 
 ### Si cambias tu foto
 
-Tu foto está en 3 formatos para que pese poco: `foto-camilo.avif`, `foto-camilo.webp` (y sus versiones pequeñas `-560`) y `foto-camilo.jpg`. Si pones una foto nueva:
+Tu foto está en 3 formatos para que pese poco: `foto-camilo-2.avif`, `foto-camilo-2.webp` (y sus versiones pequeñas `-560`) y `foto-camilo-2.jpg`. Si pones una foto nueva:
 
-- **Lo más fácil:** sustituye `foto-camilo.jpg` por la nueva (con el mismo nombre) y, en `nosotros.html`, borra las dos líneas que empiezan por `<source`. Funcionará igual, solo que pesará un poco más.
+- **Lo más fácil:** sustituye `foto-camilo-2.jpg` por la nueva (con el mismo nombre) y, en `nosotros.html`, borra las dos líneas que empiezan por `<source`. Funcionará igual, solo que pesará un poco más.
 - **Lo mejor:** crea también las versiones `.avif` y `.webp` con la web squoosh.app (gratis, en el navegador) y sustituye las de la carpeta.
 
-Las imágenes se guardan 7 días en el navegador de quien visita. Para que una imagen nueva se vea al momento, ponle un nombre nuevo (por ejemplo `foto-camilo-2.jpg`) y cámbialo también en el HTML.
+Las imágenes se guardan 7 días en el navegador de quien visita. Para que una imagen nueva se vea al momento, ponle un nombre nuevo (por ejemplo `foto-camilo-3.jpg`) y cámbialo también en el HTML.
 
 ## Qué se ha optimizado
 
